@@ -62,4 +62,7 @@ def intelligence(patient, environment, patient_time, interaction_mapper):
         next_environment_id_to_time,
     )
 
-##Add learning to the intelligence layer here.
+
+# Note: model runs the first 500, stops and then turns on learning.
+
+

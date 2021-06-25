@@ -1,0 +1,88 @@
+# Draw in from the bnlearn file so it looke like this...
+Make sure that you include the conditons as well.
+
+#Import from csv using f strings!
+
+
+
+
+
+
+[
+    {
+        "patient_id": "my-patient-0",
+        "gender": "female",
+        "birth_date": "1985-05-24",
+        "conditions": [
+            {
+                "name": "diabetes",
+                "start": "2015-09-24"
+            },
+            {
+                "name": "underactive_thyroid",
+                "start": "2019-07-18"
+            }
+        ]
+    },
+    {
+        "patient_id": "my-patient-1",
+        "gender": "male",
+        "birth_date": "1973-07-01",
+        "conditions": [
+            {
+                "name": "depression",
+                "start": "2020-06-17"
+            }
+        ]
+    }
+]
+
+
+# Example patient with no conditions using f-join from a dictionary of patient details
+[
+    {
+        "patient_id": (f"{patient['my-patient-0']}"),
+        "gender": (f"{patient['gender']}"),
+        "birth_date": (f"{patient['birth_date']}"),
+        "conditions": [
+            {
+                (f"{patient['condition_name']}"), # Will this work with the extra features of the conditions?
+                (f"{patient['condition_start']}"),
+                (f"{patient['condition_severity']}"),
+
+    }
+    "starting_env": "gp"        # Added an additional variable
+    "extra variable": "extra"   # Added a second additional variable 
+]
+
+
+# Adding the patient characteristics to the JSON input using an f-string (TBC)
+
+[
+    {
+        "patient_id": (f"{patient['my-patient-0']}"),
+        "gender": (f"{patient['gender']}"),
+        "birth_date": (f"{patient['birth_date']}"),
+        "conditions": [
+            {
+                "name": "diabetes",
+                "start": "2015-09-24"
+            },
+            {
+                "name": "underactive_thyroid",
+                "start": "2019-07-18"
+            }
+        ]
+    },
+    {
+        "patient_id": "my-patient-1",
+        "gender": "male",
+        "birth_date": "1973-07-01",
+        "conditions": [
+            {
+                "name": "depression",
+                "start": "2020-06-17"
+            }
+        ]
+    }
+]
