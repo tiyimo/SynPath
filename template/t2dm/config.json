@@ -3,15 +3,15 @@
 {
     "patients": "patient_infos.json",
     "environments": "env_infos.json",
-    "intelligence_dir": "intelligence",
-    "save_dir": "outputs",
+    "intelligence_dir": "./Documents/Github/SynPath-fork/SynPath/template/t2dm/manager/intelligence",
+    "save_dir": "./Documents/Github/SynPath-fork/SynPath/template/t2dm/manager/intelligence/save_dir",
     "initial_environment_ids": {
         "from_id": 0
     },
     "stopping_condition": {
         "max_patient_time": {"days": 30}
     },
-    "hard_stop": 1000,
+    "hard_stop": 10000,
     "log_every": 1,
     "log_intermediate": false,
     "log_patient_record": true,
