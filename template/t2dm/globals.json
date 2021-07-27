@@ -1,0 +1,23 @@
+
+# Note: if 0.0 needs updating, add costs, left out topology as SynPath does not scan its neighbours
+# Need to take out things that update the patient as that is in the patient updates
+
+{
+    "discountRate": 0.03,
+    "costper_gp_encounter": 39.23,
+    "costper_community_ecounter": 20,
+    "costper_"
+
+    "developmentOfPrediabetes": 0.02,
+    "developmentOfType2": 0.1,
+    "developmentOfESRD": 0.07
+    "developmentOfliverdisease": 0.0, 
+
+    "normoglycaemicDeathRate": 0.0,
+    "prediabeticDeathRate": 0.0,
+    "type2DeathRate": 0.4,
+
+    "pathway": [i for i in range(41)]
+
+    "nAgents": 10000
+}

@@ -13,7 +13,7 @@ def smoking_update(patient, patient_time):
         "resource_type": "Condition",
         "name": "stop_smoking",
         "start": patient_time,
-        "patient.patient_currentSmoker": "Y",
+        "patient.patient_currentSmoker": "N",
     } 
 
     new_patient_record_entries = [entry]
@@ -21,7 +21,7 @@ def smoking_update(patient, patient_time):
     stop_smoking_to_prob = {0: 0.1, 1: 0.9}
 
     for patient in patient(range(10000)):
-        if "patient.patient_currentSmoker" == 1:
+        if "patient.patient_currentSmoker" == "Y":
             update_data = {"new_patient_record_entries": new_patient_record_entries}
             return (
                 patient,

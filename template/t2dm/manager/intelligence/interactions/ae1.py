@@ -22,10 +22,10 @@ def initial_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, initial_diagnosis]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
 
     next_environment_id_to_time = {
-        0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
+        2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
     }
 
@@ -55,10 +55,10 @@ def acute_event_tr(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, acute_event_tr]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
 
     next_environment_id_to_time = {
-        0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
+        2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
     }
 
