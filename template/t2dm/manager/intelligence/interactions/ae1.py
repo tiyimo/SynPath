@@ -1,6 +1,5 @@
 import datetime
 
-
 # Interactions for A&E
 # "initial diagnosis",
 # "acute_event_tr"

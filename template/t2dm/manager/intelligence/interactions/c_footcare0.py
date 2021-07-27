@@ -1,5 +1,6 @@
 import datetime
 
+
 # Interactions for diabetes footcare
 # "prevent_foot_community",
 # "manage_foot_community"

@@ -5,6 +5,7 @@ import datetime
 # "ddpp",
 # "online_lifestyle"
 
+
 # Diabetes interaction 13: Face to face group education
 
 def f2f_group_education(patient, environment, patient_time):

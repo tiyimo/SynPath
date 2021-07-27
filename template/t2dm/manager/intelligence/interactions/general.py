@@ -1,6 +1,5 @@
 import datetime
 
-
 def outpatient_encounter(patient, environment, patient_time):
 
     # NOTE: entries produced by the interaction functions must have 'name',

@@ -1,3 +1,5 @@
+import datetime
+
 # Diabetes interaction 17: Psychological assessment
 
 def psychol_assessment(patient, environment, patient_time):

@@ -10,6 +10,7 @@
 # "nutrition_advice"
 # "exit_model"
 
+
 # Diabetes interaction 35: Outpatient consultation in a diabetes service
 
 def outp_consultation_t2(patient, environment, patient_time):
