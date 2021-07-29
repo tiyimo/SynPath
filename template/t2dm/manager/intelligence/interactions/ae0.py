@@ -19,7 +19,7 @@ def initial_diagnosis(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, initial_diagnosis]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 

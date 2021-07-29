@@ -1,20 +1,22 @@
 import datetime
 
-
 # All the interactions at the gp
 # "blood_test",
 # "medication_change1",
-# "medication_change1",
+# "medication_change2",
 # "insulin_prescription",
 # "highrisk_management",
 # "exercise_prescription",
 # "prediabetes_diagnosis",
 # "t2dm_diagnosis",
-#  "glucose_management",
-#  "annual_health_check",
+# "glucose_management",
+# "annual_health_check",
 # "hypertension_management",
 # "complications_id_mant",
 # "glucose_clinic",
+
+# This is gp 1 (the second gp clinic, where patients are referred to community and hospital 1)
+# TO DO: Update the code so that when referred to the GP, they go to the right interaction??
     
 # Example (bmi)
 
@@ -64,7 +66,7 @@ def bloodtest_encounter(patient, environment, patient_time):
 def measure_hba1c(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "measure hba1c",
+        "name" : "measure_hba1c",
         "start": patient_time,
     }
 
@@ -78,9 +80,10 @@ def measure_hba1c(patient, environment, patient_time):
             "system": "http://unitsofmeasure.org",
             "code": "mmol/mol",
         },
+        "cost": 10, # to be updated for an accurate figure
     }
 
-    new_patient_record_entries = [encounter, measure_hba1c]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -99,7 +102,7 @@ def measure_hba1c(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 2: medication change 1 
+# Diabetes interaction 2: medication change 1 (double therapy)
 # If hba1c hasn't changed in 6 months, can't happen on the first appointment
 
 def medication_change1(patient, environment, patient_time):
@@ -119,9 +122,10 @@ def medication_change1(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
+        "cost": 39.23, # regular cost of GP appointment 
     }
 
-    new_patient_record_entries = [encounter, medication_change1]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -139,13 +143,13 @@ def medication_change1(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 3: medication change 2
+# Diabetes interaction 3: medication change 2 (triple therapy)
 # If hba1c hasn't changed in 6 months and interaction 2 has occurred, can't happen on the first appointment
 
 def medication_change2(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "medication change 2",
+        "name" : "medication_change2",
         "start": patient_time,
     }
 
@@ -159,9 +163,10 @@ def medication_change2(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
+        "cost": 39.23, # regular cost of GP appointment 
     }
 
-    new_patient_record_entries = [encounter, medication_change2]
+    new_patient_record_entries = [entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -190,11 +195,12 @@ def medication_change2(patient, environment, patient_time):
 
     entry = { # not the hba1c in this one
         "resource_type" : "Service Request",
-        "name": "exericise prescription", # update values of cost etc.
+        "name": "exercise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 30 # NICE 2012, to be updated for a more up to date figure
     }
 
-    new_patient_record_entries = [encounter, medication_change2]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -232,9 +238,10 @@ def prediabetes_diagnosis(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "exericise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of GP appointment 
     }
 
-    new_patient_record_entries = [encounter, prediabetes_diagnosis]
+    new_patient_record_entries = [encounter, condition, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} #call control.py instead
 
@@ -267,6 +274,7 @@ def t2dm_diagnosis(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "t2dm diagnosis", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23 # regular cost of GP appointment
     }
 
     new_patient_record_entries = [encounter, t2dm_diagnosis]
@@ -289,7 +297,7 @@ def t2dm_diagnosis(patient, environment, patient_time):
 
 
 # Diabetes interaction 8: glucose management
-# Ongoing management of glucose by a GP 
+# Ongoing management of glucose by a GP (every 6 months if stable, or otherwise every 3 months) 
 
 def glucose_management(patient, environment, patient_time):
     encounter = {
@@ -302,9 +310,10 @@ def glucose_management(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "glucose management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23 # regular cost of a GP appointment
     }
 
-    new_patient_record_entries = [encounter, glucose_management]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -336,9 +345,10 @@ def annual_health_check(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "annual_health_check", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
     }
 
-    new_patient_record_entries = [encounter, annual_health_check]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -370,9 +380,10 @@ def hypertension_management(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "annual_health_check", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
     }
 
-    new_patient_record_entries = [encounter, hypertension_management]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -398,6 +409,7 @@ def complications_id_mant(patient, environment, patient_time):
         "resource_type": "Encounter",
         "name" : "complications id and management",
         "start": patient_time,
+        "cost": 39.23 # regular cost of a GP appointment
     }
 
     entry = { # should be foot health, mental health, maternity in this one
@@ -406,7 +418,7 @@ def complications_id_mant(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, complications_id_mant]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -438,6 +450,7 @@ def glucose_clinic(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "glucose_clinic", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23 # regular cost of a GP appointment (to update to primary care nurse cost)
     }
 
     new_patient_record_entries = [encounter, glucose_clinic]

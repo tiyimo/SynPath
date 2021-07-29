@@ -36,6 +36,7 @@ def set_learning_rate(optimizer, lr):
         param_group['lr'] = lr
 
 # Intelligence feeding in patient updates from glucose.py, pregnancy.py and smoking.py
+# Is it here that you say you want it to happen once a year?
 def update_glucose(glucose_update_to_prob):
     probs = list(glucose_update_to_prob.values())
     return np.random.choice(environment, p=probs)
