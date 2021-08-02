@@ -1,6 +1,6 @@
 {
-    "patients": "patient_infos.json",
-    "environments": "env_infos.json",
+    "patients": "./Documents/Github/SynPath-fork/SynPath/template/t2dm/patient_infos.json",
+    "environments": "./Documents/Github/SynPath-fork/SynPath/template/t2dm/env_infos.json",
     "intelligence_dir": "./Documents/Github/SynPath-fork/SynPath/template/t2dm/manager/intelligence",
     "save_dir": "./Documents/Github/SynPath-fork/SynPath/template/t2dm/manager/intelligence/save_dir",
     "initial_environment_ids": {
