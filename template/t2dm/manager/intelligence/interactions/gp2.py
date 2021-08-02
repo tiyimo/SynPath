@@ -16,7 +16,7 @@ import datetime
 # "complications_id_mant",
 # "glucose_clinic",
     
-# This is gp 2 (the second gp clinic, where patients are referred to community and hospital 2)
+# This is gp 2 (the third gp clinic, where patients are referred to community and hospital 2)
 
 # Diabetes interaction 1: blood test, measure hba1c
 
@@ -37,9 +37,10 @@ def measure_hba1c(patient, environment, patient_time):
             "system": "http://unitsofmeasure.org",
             "code": "mmol/mol",
         },
+        "cost": 4,
     }
 
-    new_patient_record_entries = [encounter, measure_hba1c]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 10: 1.3, 24: 0.2} 
 
@@ -78,9 +79,10 @@ def medication_change1(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
+        "cost": 72.33, 
     }
 
-    new_patient_record_entries = [encounter, medication_change1]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 10: 1.3, 24: 0.2} 
 
@@ -119,9 +121,10 @@ def medication_change2(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
+        "cost": 72.33,
     }
 
-    new_patient_record_entries = [encounter, medication_change2]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {1: 0.5, 9: 0.3, 24: 0.2} 
 
@@ -142,10 +145,10 @@ def medication_change2(patient, environment, patient_time):
 
 # Diabetes interaction 4: exercise prescription
 
-def medication_change2(patient, environment, patient_time):
+def exercise_prescription(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "exercise_prescription",
+        "name" : "exercise prescription",
         "start": patient_time,
     }
 
@@ -153,9 +156,10 @@ def medication_change2(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "exericise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 72.33, 
     }
 
-    new_patient_record_entries = [encounter, medication_change2]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 10: 0.3, 24: 0.2} 
 
@@ -174,7 +178,7 @@ def medication_change2(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 6: prediabetes diagnosis
+# Diabetes interaction 5: prediabetes diagnosis
 # Call if hba1c is between 42 and 48 mmol/mol
 
 def prediabetes_diagnosis(patient, environment, patient_time):
@@ -216,7 +220,7 @@ def prediabetes_diagnosis(patient, environment, patient_time):
     )
 
 
-# Diabetes interaction 7: type 2 diabetes diagnosis
+# Diabetes interaction 6: type 2 diabetes diagnosis
 # Call if hba1c is over 48 mmol/mol
 
 def t2dm_diagnosis(patient, environment, patient_time):
