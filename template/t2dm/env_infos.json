@@ -4,7 +4,9 @@
         "name": "gp",
         "interactions": [
             "blood_test",
-            "medication_change",
+            "medication_metformin",
+            "medication_change1",
+            "medication_change2",
             "insulin_prescription",
             "highrisk_management",
             "exercise_prescription",
@@ -23,7 +25,9 @@
         "name": "gp",
         "interactions": [
             "blood_test",
-            "medication_change",
+            "medication_metformin",
+            "medication_change1",
+            "medication_change2",
             "insulin_prescription",
             "highrisk_management",
             "exercise_prescription",
@@ -42,7 +46,9 @@
         "name": "gp",
         "interactions": [
             "blood_test",
-            "medication_change",
+            "medication_metformin",
+            "medication_change1",
+            "medication_change2",
             "insulin_prescription",
             "highrisk_management",
             "exercise_prescription",
@@ -61,7 +67,9 @@
         "name": "gp",
         "interactions": [
             "blood_test",
-            "medication_change",
+            "medication_metformin",
+            "medication_change1",
+            "medication_change2",
             "insulin_prescription",
             "highrisk_management",
             "exercise_prescription",
@@ -80,7 +88,9 @@
         "name": "gp",
         "interactions": [
             "blood_test",
-            "medication_change",
+            "medication_metformin",
+            "medication_change1",
+            "medication_change2",
             "insulin_prescription",
             "highrisk_management",
             "exercise_prescription",
@@ -230,7 +240,8 @@
         "environment_id": 21,
         "name": "diabetes_eye_care",
         "interactions": [
-            "retinopathy_screening"
+            "retinopathy_screening",
+            "afilbercept prescription"
         ],
         "type": "community"
     },
@@ -238,7 +249,8 @@
         "environment_id": 22,
         "name": "diabetes_eye_care",
         "interactions": [
-            "retinopathy_screening"
+            "retinopathy_screening",
+            "afilbercept prescription"
         ],
         "type": "community"
     },

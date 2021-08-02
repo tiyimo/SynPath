@@ -22,11 +22,11 @@ def retinopathy_screening(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {20: 0.5, 26: 0.5} 
 
     next_environment_id_to_time = {
-        2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        20: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
+        26: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

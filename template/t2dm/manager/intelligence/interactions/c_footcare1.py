@@ -23,11 +23,12 @@ def prevent_foot_community(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 26: 0.2, 34: 0.3} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        26: datetime.timedelta(days=20),
+        34: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -59,11 +60,12 @@ def manage_foot_community(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 26: 0.2, 34: 0.3} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        26: datetime.timedelta(days=20),
+        34: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

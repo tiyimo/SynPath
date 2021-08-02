@@ -58,6 +58,31 @@ def measure_hba1c(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
+# Diabetes interaction 2: medication (metformin) 
+
+def medication_meformin(patient, environment, patient_time):
+    encounter = {
+        "resource_type": "Encounter",
+        "name" : "medication metformin",
+        "start": patient_time,
+    }
+
+    entry = { # not the hba1c in this one
+        "resource_type" : "MedicationRequest",
+        "name": "metformin", 
+        "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 72.33, # regular cost of GP appointment plus average prescription cost
+    }
+
+    new_patient_record_entries = [encounter, entry]
+
+    next_environment_id_to_prob = {4: 0.88, 8: 0.12} 
+
+    next_environment_id_to_time = {
+        4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        8: datetime.timedelta(days=20),
+    }
+
 # Diabetes interaction 2: medication change 1 
 # If hba1c hasn't changed in 6 months, can't happen on the first appointment
 
@@ -82,12 +107,12 @@ def medication_change1(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, medication_change1]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.5, 8: 0.3, 28: 0.2} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        8: datetime.timedelta(days=20),
+        28: datetime.timedelta(days=1),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -123,12 +148,12 @@ def medication_change2(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, medication_change2]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.5, 8: 0.3, 28: 0.2} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        8: datetime.timedelta(days=20),
+        28: datetime.timedelta(days=1),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -151,18 +176,17 @@ def medication_change2(patient, environment, patient_time):
 
     entry = { # not the hba1c in this one
         "resource_type" : "Service Request",
-        "name": "exericise prescription", # update values of cost etc.
+        "name": "exercise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, medication_change2]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.5, 6: 0.2} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        6: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -196,15 +220,9 @@ def prediabetes_diagnosis(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, prediabetes_diagnosis]
+    new_patient_record_entries = [encounter, condition, entry]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} #call control.py instead
-
-    next_environment_id_to_time = {
-        4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
-    }
+    # intelligence.py instead
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -225,6 +243,11 @@ def t2dm_diagnosis(patient, environment, patient_time):
         "name" : "t2dm diagnosis",
         "start": patient_time,
     }
+    condition = {
+        "resource_type": "Condition",
+        "name" : "t2dm diagnosis",
+        "start": patient_time,
+    }
 
     entry = { # should be hba1c in this one
         "resource_type" : "Service Request",
@@ -232,15 +255,9 @@ def t2dm_diagnosis(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, t2dm_diagnosis]
+    new_patient_record_entries = [encounter, condition, entry]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} #call control.py instead
-
-    next_environment_id_to_time = {
-        4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
-    }
+    # intelligence.py instead
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -268,14 +285,14 @@ def glucose_management(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, glucose_management]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.5, 28: 0.25, 30: 0.05} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        28: datetime.timedelta(days=20),
+        30: datetime.timedelta(days=10),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -305,12 +322,13 @@ def annual_health_check(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, annual_health_check]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.5, 20: 0.3, 22: 0.1, 34: 0.1} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        20: datetime.timedelta(days=20),
+        22: datetime.timedelta(days=20),
+        34: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -340,12 +358,11 @@ def hypertension_management(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, hypertension_management]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.5, 28: 0.5} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        28: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -375,12 +392,12 @@ def complications_id_mant(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, complications_id_mant]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {34: 0.5, 14: 0.3, 18: 0.2} 
 
     next_environment_id_to_time = {
-        4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        34: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        14: datetime.timedelta(days=20),
+        18: datetime.timedelta(days=1),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -410,12 +427,11 @@ def glucose_clinic(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, glucose_clinic]
 
-    next_environment_id_to_prob = {4: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {4: 0.9, 28: 0.1} 
 
     next_environment_id_to_time = {
         4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        28: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
