@@ -5,7 +5,6 @@ import datetime
 # "ddpp",
 # "online_lifestyle"
 
-
 # Diabetes interaction 13: Face to face group education
 
 def f2f_group_education(patient, environment, patient_time):
@@ -19,9 +18,10 @@ def f2f_group_education(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "f2f group education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 203,
     }
 
-    new_patient_record_entries = [encounter, f2f_group_education]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -41,20 +41,21 @@ def f2f_group_education(patient, environment, patient_time):
 
 # Diabetes interaction 14: DDPP
 
-def f2f_group_education(patient, environment, patient_time):
+def ddpp(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "f2f group education",
+        "name" : "ddpp",
         "start": patient_time,
     }
 
     entry = {
         "resource_type" : "Observation",
-        "name": "f2f group education", 
+        "name": "ddpp", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 150,
     }
 
-    new_patient_record_entries = [encounter, f2f_group_education]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -76,7 +77,7 @@ def f2f_group_education(patient, environment, patient_time):
 def online_lifestyle(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "f2f group education",
+        "name" : "online lifestyle education",
         "start": patient_time,
     }
 
@@ -84,6 +85,7 @@ def online_lifestyle(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "online lifestyle education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 268,
     }
 
     new_patient_record_entries = [encounter, online_lifestyle]

@@ -1,6 +1,5 @@
 import datetime
 
-
 # Interactions for diabetes footcare
 # "prevent_foot_community",
 # "manage_foot_community"
@@ -19,9 +18,10 @@ def prevent_foot_community(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare prevention in community", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 43, # NHS Ref costs
     }
 
-    new_patient_record_entries = [encounter, prevent_foot_community]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
 
@@ -54,9 +54,10 @@ def manage_foot_community(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare management in community", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 54, # NHS Ref costs
     }
 
-    new_patient_record_entries = [encounter, manage_foot_community]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
 

@@ -1,6 +1,5 @@
  import datetime
  
-
 # Interactions for eye care services in the community
 # "retinopathy_screening"
 
@@ -18,9 +17,10 @@ def retinopathy_screening(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "retinopathy screening", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 74, # NHS Ref costs
     }
 
-    new_patient_record_entries = [encounter, retinopathy_screening]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 8: 0.5} 
 

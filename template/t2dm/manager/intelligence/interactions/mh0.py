@@ -1,7 +1,5 @@
 import datetime
 
-
-
 # Interaction for patient with learning disabilities
 # "psychol_assessment",
 # "iapt",
@@ -19,10 +17,11 @@ def psychol_assessment(patient, environment, patient_time):
     entry = {
         "resource_type" : "Observation",
         "name": "psychological assessment", 
-        "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "start": encounter["start"] + datetime.timedelta(minutes=60),
+        "cost": 96, # NHS Ref cost for IAPT - PSSRU
     }
 
-    new_patient_record_entries = [encounter, psychol_assessment]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -54,9 +53,10 @@ def iapt(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "iapt", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 96, # NHS Ref cost for IAPT - PSSRU
     }
 
-    new_patient_record_entries = [encounter, iapt]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -88,9 +88,10 @@ def cmh_for_smi(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "cmh for smi", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 96, # NHS Ref cost for IAPT - PSSRU
     }
 
-    new_patient_record_entries = [encounter, cmh_for_smi]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 

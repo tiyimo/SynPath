@@ -15,6 +15,7 @@ def smoking_cessation1(patient, patient_time):
         "resource_type": "Condition",
         "name": "stop_smoking",
         "start": patient_time,
+        "cost": 143, # if male, 138 if female
     } 
 
     new_patient_record_entries = [encounter, entry]

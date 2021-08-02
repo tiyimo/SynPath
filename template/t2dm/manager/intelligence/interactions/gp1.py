@@ -37,7 +37,7 @@ def measure_hba1c(patient, environment, patient_time):
             "system": "http://unitsofmeasure.org",
             "code": "mmol/mol",
         },
-        "cost": 10 # to be updated for an accurate figure
+        "cost": 4 # to be updated for an accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -79,7 +79,7 @@ def medication_change1(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
-        "cost": 39.23 # regular cost of a GP
+        "cost": 72.33 # regular cost of a GP
     }
 
     new_patient_record_entries = [encounter, medication_change1]
@@ -121,7 +121,7 @@ def medication_change2(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
-        "cost": 39.23, # regular cost of a GP appointment
+        "cost": 72.33, # regular cost of a GP appointment
     }
 
     new_patient_record_entries = [encounter, medication_change2]
@@ -145,7 +145,7 @@ def medication_change2(patient, environment, patient_time):
 
 # Diabetes interaction 4: exercise prescription
 
-def medication_change2(patient, environment, patient_time):
+def exercise_prescription(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "exercise_prescription",
@@ -156,7 +156,7 @@ def medication_change2(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "exericise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
-        "cost": 30 # NICE 2012, to be updated for a more up to date figure
+        "cost": 100.60, # 2011 NIHR report, to be updated for a more up to date figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -342,13 +342,13 @@ def annual_health_check(patient, environment, patient_time):
 def hypertension_management(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "annual_health_check",
+        "name" : "hypertension management",
         "start": patient_time,
     }
 
     entry = { # should be hba1c in this one
         "resource_type" : "Service Request",
-        "name": "annual_health_check", # change the condition value, update values of cost etc.
+        "name": "hypertension management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
     }
@@ -422,6 +422,7 @@ def glucose_clinic(patient, environment, patient_time):
         "resource_type" : "Service Request",
         "name": "glucose_clinic", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 72, # regular cost of a GP appointment
     }
 
     new_patient_record_entries = [encounter, entry]

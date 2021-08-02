@@ -17,6 +17,7 @@ def initial_diagnosis(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "initial diagnosis", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 166, # NHS reference costs
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -50,9 +51,10 @@ def acute_event_tr(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "acute event treatment", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 166, # NHS reference costs
     }
 
-    new_patient_record_entries = [encounter, acute_event_tr]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 

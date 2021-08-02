@@ -23,9 +23,10 @@ def review_and_consultation(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "review and consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 3053, # NEL long stay
     }
 
-    new_patient_record_entries = [encounter, review_and_consultation]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -58,7 +59,7 @@ def bd_hypoglycaemic_ep(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, bd_hypoglycaemic_ep]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -91,7 +92,7 @@ def bd_hyperglycaemic_ep(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, bd_hyperglycaemic_ep]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -124,7 +125,7 @@ def bd_lower_limb_ep(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, bd_lower_limb_ep]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -157,7 +158,7 @@ def enhanced_indep(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, enhanced_indep]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -190,7 +191,7 @@ def retinal_procedure(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, retinal_procedure]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -223,7 +224,7 @@ def amputation(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, amputation]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
