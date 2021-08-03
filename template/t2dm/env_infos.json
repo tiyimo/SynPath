@@ -1,138 +1,138 @@
 [
     {
         "environment_id": 0,
-        "name": "gp",
+        "name": "gp0",
         "interactions": [
-            "blood_test",
-            "medication_metformin",
-            "medication_change1",
-            "medication_change2",
-            "insulin_prescription",
-            "highrisk_management",
-            "exercise_prescription",
-            "prediabetes_diagnosis",
-            "t2dm_diagnosis",
-            "glucose_management",
-            "annual_health_check",
-            "hypertension_management",
-            "complications_id_mant",
-            "glucose_clinic"
+            "gp0.blood_test",
+            "gp0.medication_metformin",
+            "gp0.medication_change1",
+            "gp0.medication_change2",
+            "gp0.insulin_prescription",
+            "gp0.highrisk_management",
+            "gp0.exercise_prescription",
+            "gp0.prediabetes_diagnosis",
+            "gp0.t2dm_diagnosis",
+            "gp0.glucose_management",
+            "gp0.annual_health_check",
+            "gp0.hypertension_management",
+            "gp0.complications_id_mant",
+            "gp0.glucose_clinic"
         ],
-        "type": "gp"
+        "type": "gp1"
     },
     {
         "environment_id": 1,
-        "name": "gp",
+        "name": "gp1",
         "interactions": [
-            "blood_test",
-            "medication_metformin",
-            "medication_change1",
-            "medication_change2",
-            "insulin_prescription",
-            "highrisk_management",
-            "exercise_prescription",
-            "prediabetes_diagnosis",
-            "t2dm_diagnosis",
-            "glucose_management",
-            "annual_health_check",
-            "hypertension_management",
-            "complications_id_mant",
-            "glucose_clinic"
+            "gp1.blood_test",
+            "gp1.medication_metformin",
+            "gp1.medication_change1",
+            "gp1.medication_change2",
+            "gp1.insulin_prescription",
+            "gp1.highrisk_management",
+            "gp1.exercise_prescription",
+            "gp1.prediabetes_diagnosis",
+            "gp1.t2dm_diagnosis",
+            "gp1.glucose_management",
+            "gp1.annual_health_check",
+            "gp1.hypertension_management",
+            "gp1.complications_id_mant",
+            "gp1.glucose_clinic"
         ],
         "type": "gp"
     },
     {
         "environment_id": 2,
-        "name": "gp",
+        "name": "gp2",
         "interactions": [
-            "blood_test",
-            "medication_metformin",
-            "medication_change1",
-            "medication_change2",
-            "insulin_prescription",
-            "highrisk_management",
-            "exercise_prescription",
-            "prediabetes_diagnosis",
-            "t2dm_diagnosis",
-            "glucose_management",
-            "annual_health_check",
-            "hypertension_management",
-            "complications_id_mant",
-            "glucose_clinic"
+            "gp2.blood_test",
+            "gp2.medication_metformin",
+            "gp2.medication_change1",
+            "gp2.medication_change2",
+            "gp2.insulin_prescription",
+            "gp2.highrisk_management",
+            "gp2.exercise_prescription",
+            "gp2.prediabetes_diagnosis",
+            "gp2.t2dm_diagnosis",
+            "gp2.glucose_management",
+            "gp2.annual_health_check",
+            "gp2.hypertension_management",
+            "gp2.complications_id_mant",
+            "gp2.glucose_clinic"
         ],
         "type": "gp"
     },
     {
         "environment_id": 3,
-        "name": "gp",
+        "name": "gp3",
         "interactions": [
-            "blood_test",
-            "medication_metformin",
-            "medication_change1",
-            "medication_change2",
-            "insulin_prescription",
-            "highrisk_management",
-            "exercise_prescription",
-            "prediabetes_diagnosis",
-            "t2dm_diagnosis",
-            "glucose_management",
-            "annual_health_check",
-            "hypertension_management",
-            "complications_id_mant",
-            "glucose_clinic"
+            "gp3.blood_test",
+            "gp3.medication_metformin",
+            "gp3.medication_change1",
+            "gp3.medication_change2",
+            "gp3.insulin_prescription",
+            "gp3.highrisk_management",
+            "gp3.exercise_prescription",
+            "gp3.prediabetes_diagnosis",
+            "gp3.t2dm_diagnosis",
+            "gp3.glucose_management",
+            "gp3.annual_health_check",
+            "gp3.hypertension_management",
+            "gp3.complications_id_mant",
+            "gp3.glucose_clinic"
         ],
         "type": "gp"
     },
     {
         "environment_id": 4,
-        "name": "gp",
+        "name": "gp4",
         "interactions": [
-            "blood_test",
-            "medication_metformin",
-            "medication_change1",
-            "medication_change2",
-            "insulin_prescription",
-            "highrisk_management",
-            "exercise_prescription",
-            "prediabetes_diagnosis",
-            "t2dm_diagnosis",
-            "glucose_management",
-            "annual_health_check",
-            "hypertension_management",
-            "complications_id_mant",
-            "glucose_clinic"
+            "gp4.blood_test",
+            "gp4.medication_metformin",
+            "gp4.medication_change1",
+            "gp4.medication_change2",
+            "gp4.insulin_prescription",
+            "gp4.highrisk_management",
+            "gp4.exercise_prescription",
+            "gp4.prediabetes_diagnosis",
+            "gp4.t2dm_diagnosis",
+            "gp4.glucose_management",
+            "gp4.annual_health_check",
+            "gp4.hypertension_management",
+            "gp4.complications_id_mant",
+            "gp4.glucose_clinic"
         ],
         "type": "gp"
     },
     {
         "environment_id": 5,
-        "name": "group_education",
+        "name": "group_education 1",
         "interactions": [
-            "f2f_group_education"
+            "se0.f2f_group_education"
         ],
         "type": "structured education"
     },
     {
         "environment_id": 6,
-        "name": "group_education",
+        "name": "group_education 2",
         "interactions": [
-            "f2f_group_education"
+            "se1.f2f_group_education"
         ],
         "type": "structured education"
     },
     {
         "environment_id": 7,
-        "name": "online_lifestyle_course",
+        "name": "online lifestyle course 1",
         "interactions": [
-            "online_lifestyle"
+            "se0.online_lifestyle"
         ],
         "type": "structured_education"
     },
     {
         "environment_id": 8,
-        "name": "online_lifestyle_course",
+        "name": "online lifestyle course 2",
         "interactions": [
-            "online_lifestyle"
+            "se1.online_lifestyle"
         ],
         "type": "structured_education"
     },
@@ -140,7 +140,7 @@
         "environment_id": 9,
         "name": "ddpp",
         "interactions": [
-            "ddpp"
+            "se0.ddpp"
         ],
         "type": "structured_education"
     },
@@ -148,271 +148,271 @@
         "environment_id": 10,
         "name": "ddpp",
         "interactions": [
-            "ddpp"
+            "se1.ddpp"
         ],
         "type": "structured_education"
     },
     {
         "environment_id": 11,
-        "name": "ld_service",
+        "name": "ld service 1",
         "interactions": [
-            "adj_to_care"
+            "ld0.adj_to_care"
         ],
         "type": "community"
     },
     {
         "environment_id": 12,
-        "name": "ld_service",
+        "name": "ld service 2",
         "interactions": [
-            "adj_to_care"
+            "ld1.adj_to_care"
         ],
         "type": "community"
     },
     {
         "environment_id": 13,
-        "name": "diabetes_mental_health",
+        "name": "diabetes_mental_health 1",
         "interactions": [
-            "psychol_assessment",
-            "iapt",
-            "cmh_for_smi"
+            "mh0.psychol_assessment",
+            "mh0.iapt",
+            "mh0.cmh_for_smi"
         ],
         "type": "community"
     },
     {
         "environment_id": 14,
-        "name": "diabetes_mental_health",
+        "name": "diabetes_mental_health 2",
         "interactions": [
-            "psychol_assessment",
-            "iapt",
-            "cmh for smi"
+            "mh1.psychol_assessment",
+            "mh1.iapt",
+            "mh1.cmh for smi"
         ],
         "type": "community"
     },
     {
         "environment_id": 15,
-        "name": "diabetes_antenatal",
+        "name": "diabetes_antenatal 1",
         "interactions": [
-            "specialist_ant_advice"
+            "maternity0.specialist_ant_advice"
         ],
         "type": "community"
     },
     {
         "environment_id": 16,
-        "name": "diabetes_antenatal",
+        "name": "diabetes_antenatal 2",
         "interactions": [
-            "specialist_ant_advice"
+            "maternity1.specialist_ant_advice"
         ],
         "type": "community"
     },
     {
         "environment_id": 17,
-        "name": "maternity service",
+        "name": "maternity service 1",
         "interactions": [
-            "maternity_care"
+            "maternity0.maternity_care"
         ],
         "type": "community"
     },
     {
         "environment_id": 18,
-        "name": "maternity service",
+        "name": "maternity service 2",
         "interactions": [
-            "maternity_care"
+            "maternity1.maternity_care"
         ],
         "type": "community"
     },
     {
         "environment_id": 19,
-        "name": "smoking_service",
+        "name": "smoking_service 1",
         "interactions": [
-            "smoking_cessation"
+            "sc0.smoking_cessation"
         ],
         "type": "community"
     },
     {
         "environment_id": 20,
-        "name": "smoking_service",
+        "name": "smoking_service 2",
         "interactions": [
-            "smoking_cessation"
+            "sc1.smoking_cessation"
         ],
         "type": "community"
     },
     {
         "environment_id": 21,
-        "name": "diabetes_eye_care",
+        "name": "diabetes eye care 1",
         "interactions": [
-            "retinopathy_screening",
-            "afilbercept_prescription"
+            "eye_care0.retinopathy_screening",
+            "eye_care0.afilbercept_prescription"
         ],
         "type": "community"
     },
     {
         "environment_id": 22,
-        "name": "diabetes_eye_care",
+        "name": "diabetes eye care 2",
         "interactions": [
-            "retinopathy screening",
-            "afilbercept prescription"
+            "eye_care1.retinopathy screening",
+            "eye_care1.afilbercept prescription"
         ],
         "type": "community"
     },
     {
         "environment_id": 23,
-        "name": "a_and_e",
+        "name": "a_and_e 1",
         "interactions": [
-            "initial_assessment",
-            "acute_event_treatment"
+            "ae0.initial_assessment",
+            "ae0.acute_event_treatment"
         ],
         "type": "a_and_e"
     },
     {
         "environment_id": 24,
-        "name": "a_and_e",
+        "name": "a_and_e 2",
         "interactions": [
-            "initial_assessment",
-            "acute_event_treatment"
+            "ae1.initial_assessment",
+            "ae1.acute_event_treatment"
         ],
         "type": "a_and_e"
     },
     {
         "environment_id": 25,
-        "name": "diabetes_inpatient",
+        "name": "diabetes_inpatient 1",
         "interactions": [
-            "review_and_consultation",
-            "bd_hypoglycaemic_ep",
-            "bd_hyperglycaemic_ep",
-            "bd_lower_limb_compl",
-            "enhanced_independence",
-            "retinal_procedure",
-            "amputation"
+            "inpatient0.review_and_consultation",
+            "inpatient0.bd_hypoglycaemic_ep",
+            "inpatient0.bd_hyperglycaemic_ep",
+            "inpatient0.bd_lower_limb_compl",
+            "inpatient0.enhanced_independence",
+            "inpatient0.retinal_procedure",
+            "inpatient0.amputation"
         ],
         "type": "inpatient"
     },
     {
         "environment_id": 26,
-        "name": "diabetes_inpatient",
+        "name": "diabetes_inpatient 2",
         "interactions": [
-            "review_and_consultation",
-            "bd_hypoglycaemic_ep",
-            "bd_hyperglycaemic_ep",
-            "bd_lower_limb_compl",
-            "enhanced_independence",
-            "retinal_procedure",
-            "amputation"
+            "inpatient1.review_and_consultation",
+            "inpatient1.bd_hypoglycaemic_ep",
+            "inpatient1.bd_hyperglycaemic_ep",
+            "inpatient1.bd_lower_limb_compl",
+            "inpatient1.enhanced_independence",
+            "inpatient1.retinal_procedure",
+            "inpatient1.amputation"
         ],
         "type": "inpatient" 
     },
     {
         "environment_id": 27,
-        "name": "outpatient_diabetes",
+        "name": "outpatient_diabetes 1",
         "interactions": [
-            "outp_consultation_t2"
+            "outpatient0.outp_consultation_t2"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 28,
-        "name": "outpatient_diabetes",
+        "name": "outpatient_diabetes 2",
         "interactions": [
-            "outp_consultation_t2"
+            "outpatient1.outp_consultation_t2"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 29,
-        "name": "outpatient_urology",
+        "name": "outpatient_urology 1",
         "interactions": [
-            "outp_consultation_ed"
+            "outpatient0.outp_consultation_ed"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 30,
-        "name": "outpatient_urology",
+        "name": "outpatient_urology 2",
         "interactions": [
-            "outp_consultation_ed"
+            "outpatient1.outp_consultation_ed"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 31,
-        "name": "younger_adults_service",
+        "name": "younger_adults_service 1",
         "interactions": [
-            "intensive_support",
-            "cvd_risk_reduction"
+            "outpatient0.intensive_support",
+            "outpatient0.cvd_risk_reduction"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 32,
-        "name": "younger_adults_service",
+        "name": "younger_adults_service 2",
         "interactions": [
-            "intensive_support",
-            "cvd_risk_reduction"
+            "outpatient1.intensive_support",
+            "outpatient1.cvd_risk_reduction"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 33,
-        "name": "foot_clinic",
+        "name": "foot_clinic 1",
         "interactions": [
-            "foot_prevention",
-            "foot_management"
+            "outpatient0.foot_prevention",
+            "outpatient0.foot_management"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 34,
-        "name": "foot_clinic",
+        "name": "foot_clinic 2",
         "interactions": [
-            "foot_prevention",
-            "foot_management"
+            "outpatient1.foot_prevention",
+            "outpatient1.foot_management"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 35,
-        "name": "dietician",
+        "name": "dietician 1",
         "interactions": [
-            "nutrition_advice"
+            "outpatient0.nutrition_advice"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 36,
-        "name": "dietician",
+        "name": "dietician 2",
         "interactions": [
-            "nutrition_advice"
+            "outpatient1.nutrition_advice"
         ],
         "type": "outpatient"
     },
     {
         "environment_id": 37,
-        "name": "kidney_specialist",
+        "name": "kidney_specialist 1",
         "interactions": [
-            "exit_model"
+            "outpatient0.kidney_specialist"
         ],
         "type": "outpatient" 
     },
     {
         "environment_id": 38,
-        "name": "kidney_specialist",
+        "name": "kidney_specialist 2",
         "interactions": [
-            "exit_model"
+            "outpatient1.kidney_specialist"
         ],
         "type": "outpatient" 
     },
     {
         "environment_id": 39,
-        "name": "liver_specialist",
+        "name": "liver_specialist 1",
         "interactions": [
-            "exit_model"
+            "outpatient0.liver_specialist"
         ],
         "type": "outpatient" 
     },
     {
         "environment_id": 40,
-        "name": "liver_specialist",
+        "name": "liver_specialist 2",
         "interactions": [
-            "exit_model"
+            "outpatient1.liver_specialist"
         ],
         "type": "outpatient"  
     }

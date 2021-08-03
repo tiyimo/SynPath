@@ -1,3 +1,4 @@
+from SynPath.src.patient_abm.agent.environment import COEnvironmentAgent, IPEnvironmentAgent, OPEnvironmentAgent
 import copy
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Tuple, Union
@@ -32,7 +33,7 @@ def _initialize_environments_from_attributes(
     attributes: List[dict],
 ) -> Dict[
     Union[str, int],
-    Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent],
+    Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent, COEnvironmentAgent, OPEnvironmentAgent, IPEnvironmentAgent],
 ]:
 
     environments = []
@@ -52,6 +53,12 @@ def _initialize_environments_from_attributes(
             environment = AandEEnvironmentAgent(**attribute)
         elif type_ == "gp":
             environment = GPEnvironmentAgent(**attribute)
+        elif type_ == "community":
+            environment = COEnvironmentAgent(**attribute)
+        elif type_ == "outpatient":
+            environment = OPEnvironmentAgent(**attribute)
+        elif type_ == "inpatient":
+            environment = IPEnvironmentAgent(**attribute)
         else:
             environment = EnvironmentAgent(**attribute)
 
@@ -82,7 +89,7 @@ def _initialize_agents(
     List[PatientAgent],
     Dict[
         Union[str, int],
-        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent],
+        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent, COEnvironmentAgent, OPEnvironmentAgent, IPEnvironmentAgent],
     ],
 ]:
     agent_to_init = {
@@ -167,7 +174,7 @@ def _initialize_initial_environment_ids(
     config: dict,
     environments: Dict[
         Union[str, int],
-        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent],
+        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent, COEnvironmentAgent, OPEnvironmentAgent, IPEnvironmentAgent],
     ],
     patients: List[PatientAgent],
 ) -> List[Union[int, str]]:
@@ -266,7 +273,7 @@ def initialize(
     List[PatientAgent],
     Dict[
         Union[str, int],
-        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent],
+        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent,COEnvironmentAgent, OPEnvironmentAgent, IPEnvironmentAgent],
     ],
     Dict[str, Callable],
     Callable,
@@ -291,7 +298,7 @@ def initialize(
         Patient to simulation
     environments : Dict[
         Union[str, int],
-        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent],
+        Union[AandEEnvironmentAgent, EnvironmentAgent, GPEnvironmentAgent, COEnvironmentAgent, OPEnvironmentAgent, IPEnvironmentAgent],
     ]
         Environments in simulation
     interaction_mapper : Dict[str, Callable]

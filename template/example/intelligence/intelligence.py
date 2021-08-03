@@ -61,5 +61,3 @@ def intelligence(patient, environment, patient_time, interaction_mapper):
         next_environment_id_to_prob,
         next_environment_id_to_time,
     )
-
-##Add learning to the intelligence layer here.
