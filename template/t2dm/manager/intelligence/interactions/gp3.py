@@ -39,7 +39,7 @@ def measure_hba1c(patient, environment, patient_time):
         },
     }
 
-    new_patient_record_entries = [encounter, measure_hba1c]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.5, 10: 1.3, 24: 0.2} 
 
@@ -60,7 +60,7 @@ def measure_hba1c(patient, environment, patient_time):
 
  # Diabetes interaction 2: medication (metformin) 
 
-def medication_meformin(patient, environment, patient_time):
+def medication_metformin(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "medication metformin",
@@ -81,7 +81,16 @@ def medication_meformin(patient, environment, patient_time):
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
-    }   
+    }
+
+    update_data = {"new_patient_record_entries": new_patient_record_entries}
+    return (
+        patient,
+        environment,
+        update_data,
+        next_environment_id_to_prob,
+        next_environment_id_to_time,
+    )   
 
 # Diabetes interaction 2: medication change 1 
 # If hba1c hasn't changed in 6 months, can't happen on the first appointment
@@ -105,7 +114,7 @@ def medication_change1(patient, environment, patient_time):
         },
     }
 
-    new_patient_record_entries = [encounter, medication_change1]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.5, 8: 0.3, 28: 0.2} 
 
@@ -146,7 +155,7 @@ def medication_change2(patient, environment, patient_time):
         },
     }
 
-    new_patient_record_entries = [encounter, medication_change2]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.5, 8: 0.3, 28: 0.2} 
 
@@ -167,7 +176,7 @@ def medication_change2(patient, environment, patient_time):
 
 # Diabetes interaction 4: exercise prescription
 
-def medication_change2(patient, environment, patient_time):
+def exercise_prescription(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "exercise_prescription",
@@ -220,9 +229,14 @@ def prediabetes_diagnosis(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, prediabetes_diagnosis]
+    new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {3: 0.8, 6: 0.2} 
+
+    next_environment_id_to_time = {
+        3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -258,7 +272,12 @@ def t2dm_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {3: 0.8, 6: 0.2} 
+
+    next_environment_id_to_time = {
+        3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -286,7 +305,7 @@ def glucose_management(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, glucose_management]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.5, 28: 0.3, 30: 0.1} 
 
@@ -321,7 +340,7 @@ def annual_health_check(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, annual_health_check]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.5, 20: 0.3, 22: 0.1, 34: 0.1} 
 
@@ -357,7 +376,7 @@ def hypertension_management(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, hypertension_management]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.5, 28: 0.5} 
 
@@ -391,7 +410,7 @@ def complications_id_mant(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, complications_id_mant]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {34: 0.5, 14: 0.3, 18: 0.2} 
 
@@ -426,7 +445,7 @@ def glucose_clinic(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, glucose_clinic]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {3: 0.9, 28: 0.1} 
 

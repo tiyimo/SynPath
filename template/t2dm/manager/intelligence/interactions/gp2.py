@@ -1,6 +1,5 @@
 import datetime
 
-
 # All the interactions at the gp
 # "blood_test",
 # "medication_change1",
@@ -61,7 +60,7 @@ def measure_hba1c(patient, environment, patient_time):
 
  # Diabetes interaction 2: medication (metformin) 
 
-def medication_meformin(patient, environment, patient_time):
+def medication_metformin(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "medication metformin",
@@ -82,7 +81,16 @@ def medication_meformin(patient, environment, patient_time):
     next_environment_id_to_time = {
         2: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
-    }   
+    }
+    
+    update_data = {"new_patient_record_entries": new_patient_record_entries}
+    return (
+        patient,
+        environment,
+        update_data,
+        next_environment_id_to_prob,
+        next_environment_id_to_time,
+    )   
 
 # Diabetes interaction 2: medication change 1 
 # If hba1c hasn't changed in 6 months, can't happen on the first appointment
@@ -226,7 +234,12 @@ def prediabetes_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {2: 0.8, 6: 0.2} 
+
+    next_environment_id_to_time = {
+        2: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -262,7 +275,12 @@ def t2dm_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, condition,]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {2: 0.8, 6: 0.2} 
+
+    next_environment_id_to_time = {
+        2: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -290,7 +308,7 @@ def glucose_management(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, glucose_management]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 28: 0.25, 30: 0.05} 
 
@@ -325,7 +343,7 @@ def annual_health_check(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=10),
     }
 
-    new_patient_record_entries = [encounter, annual_health_check]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {2: 0.5, 20: 0.3, 22: 0.1, 34: 0.1} 
 

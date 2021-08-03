@@ -97,7 +97,7 @@ def measure_hba1c(patient, environment, patient_time):
 
 # Diabetes interaction 2: medication (metformin) 
 
-def medication_meformin(patient, environment, patient_time):
+def medication_metformin(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "medication metformin",

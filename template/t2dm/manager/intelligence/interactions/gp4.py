@@ -222,7 +222,12 @@ def prediabetes_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {4: 0.8, 6: 0.2} 
+
+    next_environment_id_to_time = {
+        4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -257,7 +262,12 @@ def t2dm_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {4: 0.8, 6: 0.2} 
+
+    next_environment_id_to_time = {
+        4: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
