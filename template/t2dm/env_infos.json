@@ -3,12 +3,11 @@
         "environment_id": 0,
         "name": "gp0",
         "interactions": [
-            "gp0.blood_test",
+            "gp0.measure_hba1c",
             "gp0.medication_metformin",
             "gp0.medication_change1",
             "gp0.medication_change2",
             "gp0.insulin_prescription",
-            "gp0.highrisk_management",
             "gp0.exercise_prescription",
             "gp0.prediabetes_diagnosis",
             "gp0.t2dm_diagnosis",
@@ -24,12 +23,11 @@
         "environment_id": 1,
         "name": "gp1",
         "interactions": [
-            "gp1.blood_test",
+            "gp1.measure_hba1c",
             "gp1.medication_metformin",
             "gp1.medication_change1",
             "gp1.medication_change2",
             "gp1.insulin_prescription",
-            "gp1.highrisk_management",
             "gp1.exercise_prescription",
             "gp1.prediabetes_diagnosis",
             "gp1.t2dm_diagnosis",
@@ -45,12 +43,11 @@
         "environment_id": 2,
         "name": "gp2",
         "interactions": [
-            "gp2.blood_test",
+            "gp2.measure_hba1c",
             "gp2.medication_metformin",
             "gp2.medication_change1",
             "gp2.medication_change2",
             "gp2.insulin_prescription",
-            "gp2.highrisk_management",
             "gp2.exercise_prescription",
             "gp2.prediabetes_diagnosis",
             "gp2.t2dm_diagnosis",
@@ -66,12 +63,11 @@
         "environment_id": 3,
         "name": "gp3",
         "interactions": [
-            "gp3.blood_test",
+            "gp3.measure_hba1c",
             "gp3.medication_metformin",
             "gp3.medication_change1",
             "gp3.medication_change2",
             "gp3.insulin_prescription",
-            "gp3.highrisk_management",
             "gp3.exercise_prescription",
             "gp3.prediabetes_diagnosis",
             "gp3.t2dm_diagnosis",
@@ -87,12 +83,11 @@
         "environment_id": 4,
         "name": "gp4",
         "interactions": [
-            "gp4.blood_test",
+            "gp4.measure_hba1c",
             "gp4.medication_metformin",
             "gp4.medication_change1",
             "gp4.medication_change2",
             "gp4.insulin_prescription",
-            "gp4.highrisk_management",
             "gp4.exercise_prescription",
             "gp4.prediabetes_diagnosis",
             "gp4.t2dm_diagnosis",
@@ -184,7 +179,7 @@
         "interactions": [
             "mh1.psychol_assessment",
             "mh1.iapt",
-            "mh1.cmh for smi"
+            "mh1.cmh_for_smi"
         ],
         "type": "community"
     },
@@ -249,8 +244,8 @@
         "environment_id": 22,
         "name": "diabetes eye care 2",
         "interactions": [
-            "eye_care1.retinopathy screening",
-            "eye_care1.afilbercept prescription"
+            "eye_care1.retinopathy_screening",
+            "eye_care1.afilbercept_prescription"
         ],
         "type": "community"
     },
@@ -258,7 +253,7 @@
         "environment_id": 23,
         "name": "a_and_e 1",
         "interactions": [
-            "ae0.initial_assessment",
+            "ae0.initial_diagnosis",
             "ae0.acute_event_treatment"
         ],
         "type": "a_and_e"
@@ -267,7 +262,7 @@
         "environment_id": 24,
         "name": "a_and_e 2",
         "interactions": [
-            "ae1.initial_assessment",
+            "ae1.initial_diagnosis",
             "ae1.acute_event_treatment"
         ],
         "type": "a_and_e"
@@ -279,8 +274,8 @@
             "inpatient0.review_and_consultation",
             "inpatient0.bd_hypoglycaemic_ep",
             "inpatient0.bd_hyperglycaemic_ep",
-            "inpatient0.bd_lower_limb_compl",
-            "inpatient0.enhanced_independence",
+            "inpatient0.bd_lower_limb_ep",
+            "inpatient0.enhanced_indep",
             "inpatient0.retinal_procedure",
             "inpatient0.amputation"
         ],
@@ -293,8 +288,8 @@
             "inpatient1.review_and_consultation",
             "inpatient1.bd_hypoglycaemic_ep",
             "inpatient1.bd_hyperglycaemic_ep",
-            "inpatient1.bd_lower_limb_compl",
-            "inpatient1.enhanced_independence",
+            "inpatient1.bd_lower_limb_ep",
+            "inpatient1.enhanced_indep",
             "inpatient1.retinal_procedure",
             "inpatient1.amputation"
         ],
@@ -336,7 +331,7 @@
         "environment_id": 31,
         "name": "younger_adults_service 1",
         "interactions": [
-            "outpatient0.intensive_support",
+            "outpatient0.intensive_glucose_control",
             "outpatient0.cvd_risk_reduction"
         ],
         "type": "outpatient"
@@ -345,7 +340,7 @@
         "environment_id": 32,
         "name": "younger_adults_service 2",
         "interactions": [
-            "outpatient1.intensive_support",
+            "outpatient1.intensive_glucose_control",
             "outpatient1.cvd_risk_reduction"
         ],
         "type": "outpatient"
@@ -354,8 +349,8 @@
         "environment_id": 33,
         "name": "foot_clinic 1",
         "interactions": [
-            "outpatient0.foot_prevention",
-            "outpatient0.foot_management"
+            "outpatient0.prevent_foot_outpatient",
+            "outpatient0.manage_foot_outpatient"
         ],
         "type": "outpatient"
     },
@@ -363,8 +358,8 @@
         "environment_id": 34,
         "name": "foot_clinic 2",
         "interactions": [
-            "outpatient1.foot_prevention",
-            "outpatient1.foot_management"
+            "outpatient1.prevent_foot_outpatient",
+            "outpatient1.manage_foot_outpatient"
         ],
         "type": "outpatient"
     },

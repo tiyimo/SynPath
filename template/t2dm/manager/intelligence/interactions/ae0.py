@@ -2,7 +2,7 @@ import datetime
 
 # Interactions for A&E
 # "initial diagnosis",
-# "acute_event_tr"
+# "acute_event_treatment"
 
 # Diabetes interaction 26: A&E diagnosis 
 
@@ -40,7 +40,7 @@ def initial_diagnosis(patient, environment, patient_time):
 
 # Diabetes interaction 27: A&E treatment 
 
-def acute_event_tr(patient, environment, patient_time):
+def acute_event_treatment(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "acute event treatment",

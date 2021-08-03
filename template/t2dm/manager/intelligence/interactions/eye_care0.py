@@ -1,4 +1,4 @@
- import datetime
+import datetime
 
 # Interactions for eye care services in the community
 # "retinopathy_screening"
@@ -38,7 +38,7 @@ def retinopathy_screening(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-def afilbercept_prscription(patient, environment, patient_time):
+def afilbercept_prescription(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
         "name" : "afilbercept prescription",

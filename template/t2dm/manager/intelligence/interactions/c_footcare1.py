@@ -2,7 +2,7 @@ import datetime
 
 # Interactions for diabetes footcare
 # "prevent_foot_community",
-# "manage_foot_community"
+# "manage_foot_community",
 
 # Diabetes interaction 23: Preventing foot problems in the community
 # Caring for feet with chiropody etc with footcare in the community

@@ -18,22 +18,19 @@ def smoking_cessation(patient, patient_time):
         "cost": 143, # if male, 138 if female
     } 
 
-    new_patient_record_entries = [encounter, entry]
+   new_patient_record_entries = [encounter, entry]
 
-    stop_smoking_to_prob = {"Y": 0.8, "N": 0.2}
+   next_environment_id_to_prob = {2: 0.5, 28: 0.5} 
 
-    next_environment_id_to_prob = {2: 0.5, 28: 0.5} 
-
-    next_environment_id_to_time = {
+   next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
         28: datetime.timedelta(days=20),
     }
 
-    update_data = {"new_patient_record_entries": new_patient_record_entries}
-    return (
+   update_data = {"new_patient_record_entries": new_patient_record_entries}
+   return (
             patient,
             update_data,
-            stop_smoking_to_prob,
             next_environment_id_to_prob,
             next_environment_id_to_time,
     )

@@ -10,6 +10,7 @@
 # "nutrition_advice"
 # "exit_model" (kidney/ liver)
 
+import datetime
 
 # Diabetes interaction 35: Outpatient consultation in a diabetes service
 
