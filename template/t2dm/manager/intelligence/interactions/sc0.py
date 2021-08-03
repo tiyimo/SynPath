@@ -22,11 +22,11 @@ def smoking_cessation1(patient, patient_time):
 
     stop_smoking_to_prob = {"Y": 0.8, "N": 0.2}
 
-    next_environment_id_to_prob = {0: 0.5, 7: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 27: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        27: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

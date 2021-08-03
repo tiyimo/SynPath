@@ -1,6 +1,5 @@
  import datetime
 
-
 # Interactions for diabetes maternity related services
 # "specialist_ant_advice",
 # "pregnancy_advice"
@@ -19,15 +18,16 @@ def specialist_ant_advice(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "specialist antenatal advice", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 112, 
     }
 
-    new_patient_record_entries = [encounter, specialist_ant_advice]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 15: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        15: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -53,15 +53,16 @@ def maternity_care(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "maternity care", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 58, 
     }
 
-    new_patient_record_entries = [encounter, maternity_care]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 15: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        15: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

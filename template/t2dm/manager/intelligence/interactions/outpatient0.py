@@ -8,7 +8,7 @@
 # "prevent_foot"
 # "manage_foot"
 # "nutrition_advice"
-# "exit_model"
+# "exit_model" (kidney/ liver)
 
 
 # Diabetes interaction 35: Outpatient consultation in a diabetes service
@@ -24,15 +24,16 @@ def outp_consultation_t2(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "diabetes service consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 145, 
     }
 
-    new_patient_record_entries = [encounter, outp_consultation_t2]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 27: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        27: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -57,15 +58,16 @@ def outp_consultation_ed(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "diabetes-related urology consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 105, 
     }
 
-    new_patient_record_entries = [encounter, outp_consultation_ed]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 27: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        27: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -90,15 +92,16 @@ def laser_treatment(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "laser treatment", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 1081, 
     }
 
-    new_patient_record_entries = [encounter, laser_treatment]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 19: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        19: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -123,15 +126,16 @@ def intensive_glucose_control(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "intensive glucose control", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 145,
     }
 
-    new_patient_record_entries = [encounter, intensive_glucose_control]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 27: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        27: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -157,15 +161,16 @@ def cvd_risk_reduction(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "cvd risk reduction", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 138, 
     }
 
-    new_patient_record_entries = [encounter, cvd_risk_reduction]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 27: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        27: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -191,15 +196,16 @@ def prevent_foot_outpatient(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare prevention in outpatient", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 43, 
     }
 
-    new_patient_record_entries = [encounter, prevent_foot_outpatient]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 33: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        33: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -226,15 +232,16 @@ def manage_foot_outpatient(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare management in outpatient", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 54, 
     }
 
-    new_patient_record_entries = [encounter, manage_foot_outpatient]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 33: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        33: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -259,15 +266,16 @@ def nutrition_advice(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "nutrition advice", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 90, 
     }
 
-    new_patient_record_entries = [encounter, nutrition_advice]
+    new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {0: 0.5, 27: 0.5} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        27: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -279,7 +287,7 @@ def nutrition_advice(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 43: Kidney specialist
+# Diabetes interaction 43: Kidney specialist # change to exit model
 
 def kidney_specialist(patient, environment, patient_time):
     encounter = {
@@ -294,7 +302,7 @@ def kidney_specialist(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, kidney_specialist]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 
@@ -312,7 +320,7 @@ def kidney_specialist(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 43: Liver specialist
+# Diabetes interaction 43: Liver specialist # change to exit model
 
 def liver_specialist(patient, environment, patient_time):
     encounter = {
@@ -327,7 +335,7 @@ def liver_specialist(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
     }
 
-    new_patient_record_entries = [encounter, liver_specialist]
+    new_patient_record_entries = [encounter, entry]
 
     next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
 

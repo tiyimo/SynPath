@@ -1,6 +1,5 @@
 import datetime
 
-
 # Interaction for patient with learning disabilities
 # "adj_to_care"
 
@@ -18,15 +17,16 @@ def adj_to_care(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "adjustments to care", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 200, # update for accurate cost
     }
 
     new_patient_record_entries = [encounter, adj_to_care]
 
-    next_environment_id_to_prob = {0: 0.5, 8: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 6: 0.5} 
 
     next_environment_id_to_time = {
-        0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        8: datetime.timedelta(days=20),
+        2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
+        6: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
