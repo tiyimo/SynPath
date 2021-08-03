@@ -18,7 +18,7 @@ def f2f_group_education(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "f2f group education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 203,
+        "cost": 203, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -52,7 +52,7 @@ def ddpp(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "ddpp", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 150,
+        "cost": 150, # update
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -85,7 +85,7 @@ def online_lifestyle(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "online lifestyle education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 268,
+        "cost": 268, # Liva, Nuffield Trust
     }
 
     new_patient_record_entries = [encounter, entry]
