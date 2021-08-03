@@ -24,7 +24,9 @@ def outp_consultation_t2(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "diabetes service consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 145, 
+        "cost": 145,
+        "glucose": -1,
+        "carbon": 22, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -59,6 +61,8 @@ def outp_consultation_ed(patient, environment, patient_time):
         "name": "diabetes-related urology consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 105, 
+        "glucose": 0,
+        "carbon": 22, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -92,7 +96,9 @@ def laser_treatment(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "laser treatment", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 1081, 
+        "cost": 1081,
+        "glucose": 0,
+        "carbon": 800, # update for accurate  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -127,6 +133,8 @@ def intensive_glucose_control(patient, environment, patient_time):
         "name": "intensive glucose control", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 145,
+        "glucose": -1,
+        "carbon": 22, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -161,7 +169,9 @@ def cvd_risk_reduction(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "cvd risk reduction", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 138, 
+        "cost": 138,
+        "glucose": -1,
+        "carbon": 22,  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -196,7 +206,9 @@ def prevent_foot_outpatient(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare prevention in outpatient", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 43, 
+        "cost": 43,
+        "glucose": -1,
+        "carbon": 22,  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -232,7 +244,9 @@ def manage_foot_outpatient(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare management in outpatient", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 54, 
+        "cost": 54,
+        "glucose": -1,
+        "carbon": 22,  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -266,7 +280,9 @@ def nutrition_advice(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "nutrition advice", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 90, 
+        "cost": 90,
+        "glucose": -1,
+        "carbon": 22,  
     }
 
     new_patient_record_entries = [encounter, entry]

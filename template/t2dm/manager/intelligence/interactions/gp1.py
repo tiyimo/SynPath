@@ -38,6 +38,8 @@ def measure_hba1c(patient, environment, patient_time):
             "code": "mmol/mol",
         },
         "cost": 4 # to be updated for an accurate figure
+        "glucose": 0,
+        "carbon": 6, # update
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -73,6 +75,8 @@ def medication_meformin(patient, environment, patient_time):
         "name": "metformin", 
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 72.33, # regular cost of GP appointment plus average prescription cost
+        "glucose": -1,
+        "carbon": 23, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -82,7 +86,16 @@ def medication_meformin(patient, environment, patient_time):
     next_environment_id_to_time = {
         1: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         7: datetime.timedelta(days=20),
-    }    
+    }
+    
+    update_data = {"new_patient_record_entries": new_patient_record_entries}
+    return (
+        patient,
+        environment,
+        update_data,
+        next_environment_id_to_prob,
+        next_environment_id_to_time,
+    )       
 
 # Diabetes interaction 2: medication change 1 (double therapy)
 # If hba1c hasn't changed in 6 months, can't happen on the first appointment
@@ -105,6 +118,8 @@ def medication_change1(patient, environment, patient_time):
           #  "code": "mg",
         },
         "cost": 72.33 # regular cost of a GP
+        "glucose": -1,
+        "carbon": 23,
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -147,6 +162,8 @@ def medication_change2(patient, environment, patient_time):
           #  "code": "mg",
         },
         "cost": 72.33, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 23,
     }
 
     new_patient_record_entries = [encounter, medication_change2]
@@ -183,6 +200,8 @@ def exercise_prescription(patient, environment, patient_time):
         "name": "exercise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 100.60, # 2011 NIHR report, to be updated for a more up to date figure
+        "glucose": -1,
+        "carbon": 23, # update to correct
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -224,11 +243,18 @@ def prediabetes_diagnosis(patient, environment, patient_time):
         "name": "exericise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, # update to correct
     }
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {1: 0.8, 5: 0.2} 
+
+    next_environment_id_to_time = {
+        1: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        5: datetime.timedelta(days=20)
+    }
     
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -261,11 +287,18 @@ def t2dm_diagnosis(patient, environment, patient_time):
         "name": "t2dm diagnosis", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, # update to correct
     }
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    # intelligence.py instead
+    next_environment_id_to_prob = {1: 0.8, 5: 0.2} 
+
+    next_environment_id_to_time = {
+        1: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        5: datetime.timedelta(days=20)
+    }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
     return (
@@ -292,6 +325,8 @@ def glucose_management(patient, environment, patient_time):
         "name": "glucose management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, # update to correct
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -328,6 +363,8 @@ def annual_health_check(patient, environment, patient_time):
         "name": "annual_health_check", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, # update to correct
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -365,6 +402,8 @@ def hypertension_management(patient, environment, patient_time):
         "name": "hypertension management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
+        "glucose": 0,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -400,6 +439,8 @@ def complications_id_mant(patient, environment, patient_time):
         "name": "complications id and management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 39.23, # regular cost of a GP appointment
+        "glucose": 0,
+        "carbon": 6,
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -436,6 +477,8 @@ def glucose_clinic(patient, environment, patient_time):
         "name": "glucose_clinic", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 72, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, # update to correct
     }
 
     new_patient_record_entries = [encounter, entry]

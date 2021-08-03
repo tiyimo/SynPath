@@ -19,6 +19,8 @@ def adj_to_care(patient, environment, patient_time):
         "name": "adjustments to care", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 200, # update for accurate cost
+        "glucose": 0,
+        "carbon": 50,  # update for accurate carbon
     }
 
     new_patient_record_entries = [encounter, entry]

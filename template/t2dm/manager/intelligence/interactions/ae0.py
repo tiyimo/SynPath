@@ -18,6 +18,8 @@ def initial_diagnosis(patient, environment, patient_time):
         "name": "initial diagnosis", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 166, # NHS reference costs
+        "glucose": -1
+        "carbon": 300 # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -52,6 +54,8 @@ def acute_event_tr(patient, environment, patient_time):
         "name": "acute event treatment", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 166, # NHS reference costs
+        "glucose": -1
+        "carbon": 300 # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]

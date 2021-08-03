@@ -19,6 +19,8 @@ def prevent_foot_community(patient, environment, patient_time):
         "name": "footcare prevention in community", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 43, # NHS Ref costs
+        "glucose": -1
+        "carbon": 25 # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -56,6 +58,8 @@ def manage_foot_community(patient, environment, patient_time):
         "name": "footcare management in community", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 54, # NHS Ref costs
+        "glucose": -1
+        "carbon": 25 # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]

@@ -16,6 +16,8 @@ def smoking_cessation2(patient, patient_time):
         "name": "stop_smoking",
         "start": patient_time,
         "cost": 143, # if male, 138 if female
+        "glucose": -1,
+        "carbon": 22, # update
     } 
 
     new_patient_record_entries = [encounter, entry]
