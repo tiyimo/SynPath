@@ -44,13 +44,13 @@ def f2f_group_education(patient, environment, patient_time):
 def ddpp(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "ddpp",
+        "name" : "ddpp_course",
         "start": patient_time,
     }
 
     entry = {
         "resource_type" : "Observation",
-        "name": "ddpp", 
+        "name": "ddpp_course", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 150, # update
     }

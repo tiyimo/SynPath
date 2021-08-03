@@ -108,7 +108,7 @@
         "environment_id": 5,
         "name": "group_education",
         "interactions": [
-            "group_education_session"
+            "f2f_group_education"
         ],
         "type": "structured education"
     },
@@ -116,7 +116,7 @@
         "environment_id": 6,
         "name": "group_education",
         "interactions": [
-            "group_education_session"
+            "f2f_group_education"
         ],
         "type": "structured education"
     },
@@ -124,7 +124,7 @@
         "environment_id": 7,
         "name": "online_lifestyle_course",
         "interactions": [
-            "online_lifestyle_management"
+            "online_lifestyle"
         ],
         "type": "structured_education"
     },
@@ -132,7 +132,7 @@
         "environment_id": 8,
         "name": "online_lifestyle_course",
         "interactions": [
-            "online_lifestyle_management"
+            "online_lifestyle"
         ],
         "type": "structured_education"
     },
@@ -140,7 +140,7 @@
         "environment_id": 9,
         "name": "ddpp",
         "interactions": [
-            "ddpp_course"
+            "ddpp"
         ],
         "type": "structured_education"
     },
@@ -148,7 +148,7 @@
         "environment_id": 10,
         "name": "ddpp",
         "interactions": [
-            "ddpp_course"
+            "ddpp"
         ],
         "type": "structured_education"
     },
@@ -172,7 +172,7 @@
         "environment_id": 13,
         "name": "diabetes_mental_health",
         "interactions": [
-            "psychological_assessment",
+            "psychol_assessment",
             "iapt",
             "cmh_for_smi"
         ],
@@ -182,9 +182,9 @@
         "environment_id": 14,
         "name": "diabetes_mental_health",
         "interactions": [
-            "psychological_assessment",
+            "psychol_assessment",
             "iapt",
-            "cmh_for_smi"
+            "cmh for smi"
         ],
         "type": "community"
     },
@@ -192,7 +192,7 @@
         "environment_id": 15,
         "name": "diabetes_antenatal",
         "interactions": [
-            "antenatal_specialist_visit"
+            "specialist_ant_advice"
         ],
         "type": "community"
     },
@@ -200,7 +200,7 @@
         "environment_id": 16,
         "name": "diabetes_antenatal",
         "interactions": [
-            "antenatal_specialist_visit"
+            "specialist_ant_advice"
         ],
         "type": "community"
     },
@@ -208,7 +208,7 @@
         "environment_id": 17,
         "name": "maternity service",
         "interactions": [
-            "pregnancy advice"
+            "maternity_care"
         ],
         "type": "community"
     },
@@ -216,7 +216,7 @@
         "environment_id": 18,
         "name": "maternity service",
         "interactions": [
-            "pregnancy advice"
+            "maternity_care"
         ],
         "type": "community"
     },
@@ -241,7 +241,7 @@
         "name": "diabetes_eye_care",
         "interactions": [
             "retinopathy_screening",
-            "afilbercept prescription"
+            "afilbercept_prescription"
         ],
         "type": "community"
     },
@@ -249,7 +249,7 @@
         "environment_id": 22,
         "name": "diabetes_eye_care",
         "interactions": [
-            "retinopathy_screening",
+            "retinopathy screening",
             "afilbercept prescription"
         ],
         "type": "community"
@@ -284,7 +284,7 @@
             "retinal_procedure",
             "amputation"
         ],
-        "type": "community"
+        "type": "inpatient"
     },
     {
         "environment_id": 26,
@@ -298,7 +298,7 @@
             "retinal_procedure",
             "amputation"
         ],
-        "type": "community" 
+        "type": "inpatient" 
     },
     {
         "environment_id": 27,

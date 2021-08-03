@@ -4,10 +4,10 @@
 
 import datetime
 
-def smoking_cessation2(patient, patient_time):
+def smoking_cessation(patient, patient_time):
    encounter = {
        "resource_type": "Encounter",
-       "name": "Smoking cessation service",
+       "name": "smoking cessation",
        "start": patient_time,
    }
 

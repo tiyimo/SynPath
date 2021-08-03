@@ -9,13 +9,13 @@ import datetime
 def adj_to_care(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
-        "name" : "adjustments to care",
+        "name" : "ld_service",
         "start": patient_time,
     }
 
     entry = {
         "resource_type" : "Observation",
-        "name": "adjustments to care", 
+        "name": "ld_service", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 200, # update for accurate cost
     }
