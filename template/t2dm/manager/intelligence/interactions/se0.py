@@ -19,6 +19,8 @@ def f2f_group_education(patient, environment, patient_time):
         "name": "f2f group education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 203, # DESMOND RCT
+        "glucose": -1,
+        "carbon": 100, # update
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -53,6 +55,8 @@ def ddpp(patient, environment, patient_time):
         "name": "ddpp_course", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 150, # to be updated
+        "glucose": -1,
+        "carbon": 100, # update 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -86,6 +90,8 @@ def online_lifestyle(patient, environment, patient_time):
         "name": "online lifestyle education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 268, # Liva, Nuffield Trust
+        "glucose": -1,
+        "carbon": 100, # update 
     }
 
     new_patient_record_entries = [encounter, entry]

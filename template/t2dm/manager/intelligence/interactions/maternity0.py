@@ -18,7 +18,9 @@ def specialist_ant_advice(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "specialist antenatal advice", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 112, 
+        "cost": 112,
+        "glucose": 0,
+        "carbon": 50,  # update for accurate carbon  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -53,7 +55,9 @@ def maternity_care(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "maternity care", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 58, 
+        "cost": 58,
+        "glucose": 0,
+        "carbon": 50,  # update for accurate carbon  
     }
 
     new_patient_record_entries = [encounter, entry]

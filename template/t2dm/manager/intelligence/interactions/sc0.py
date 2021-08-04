@@ -15,6 +15,8 @@ def smoking_cessation(patient, environment, patient_time):
         "name": "stop_smoking",
         "start": patient_time,
         "cost": 143,
+        "glucose": -1,
+        "carbon": 22, 
     } 
     
    new_patient_record_entries = [encounter, entry]

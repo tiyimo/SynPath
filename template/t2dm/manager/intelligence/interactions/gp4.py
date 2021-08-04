@@ -30,12 +30,9 @@ def measure_hba1c(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "measure hba1c", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "value": {
-            "value": "72",
-            "unit": "mmol/mol",
-            "system": "http://unitsofmeasure.org",
-            "code": "mmol/mol",
-        },
+        "cost": 4,
+        "glucose": 0,
+        "carbon": 6, # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -71,6 +68,8 @@ def medication_metformin(patient, environment, patient_time):
         "name": "metformin", 
         "start": encounter["start"] + datetime.timedelta(minutes=10),
         "cost": 72.33, # regular cost of GP appointment plus average prescription cost
+        "glucose": -1,
+        "carbon": 23, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -111,6 +110,9 @@ def medication_change1(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
+        "cost": 72.33,
+        "glucose": -1,
+        "carbon": 23, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -152,6 +154,9 @@ def medication_change2(patient, environment, patient_time):
           #  "system": "http://unitsofmeasure.org",
           #  "code": "mg",
         },
+        "cost": 72.33,
+        "glucose": -1,
+        "carbon": 23, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -185,7 +190,9 @@ def insulin_prescription(patient, environment, patient_time):
         "resource_type" : "MedicationRequest",
         "name": "insulin", 
         "start": encounter["start"] + datetime.timedelta(minutes=10),
-        "cost": 72.33, # regular cost of GP appointment 
+        "cost": 72.33, # regular cost of GP appointment
+        "glucose": -1,
+        "carbon": 23,  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -253,6 +260,9 @@ def exercise_prescription(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "exercise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 100.60, # 2011 NIHR report, to be updated for a more up to date figure
+        "glucose": -1,
+        "carbon": 23,
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -293,6 +303,9 @@ def prediabetes_diagnosis(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "exericise prescription", # update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, condition, entry]
@@ -332,6 +345,9 @@ def t2dm_diagnosis(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "t2dm diagnosis", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, condition, entry]
@@ -367,6 +383,9 @@ def glucose_management(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "glucose management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -402,6 +421,9 @@ def annual_health_check(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "annual_health_check", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -438,6 +460,9 @@ def hypertension_management(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "annual_health_check", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -472,6 +497,9 @@ def complications_id_mant(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "complications id and management", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -507,6 +535,9 @@ def glucose_clinic(patient, environment, patient_time):
         "resource_type" : "ServiceRequest",
         "name": "glucose_clinic", # change the condition value, update values of cost etc.
         "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 39.23, # regular cost of a GP appointment
+        "glucose": -1,
+        "carbon": 6, 
     }
 
     new_patient_record_entries = [encounter, entry]

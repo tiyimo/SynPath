@@ -18,6 +18,8 @@ def retinopathy_screening(patient, environment, patient_time):
         "name": "retinopathy screening", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 74, # NHS Ref costs
+        "glucose": 0,
+        "carbon": 25, # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -51,6 +53,8 @@ def afilbercept_prescription(patient, environment, patient_time):
         "name": "afilbercept prescription", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 809, # NHS Ref costs
+        "glucose": 0,
+        "carbon": 25, # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]

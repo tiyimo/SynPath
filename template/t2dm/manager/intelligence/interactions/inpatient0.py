@@ -22,6 +22,9 @@ def review_and_consultation(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "review and consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
+        "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -57,6 +60,8 @@ def bd_hypoglycaemic_ep(patient, environment, patient_time):
         "name": "hypoglycaemic ep bd", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -92,6 +97,8 @@ def bd_hyperglycaemic_ep(patient, environment, patient_time):
         "name": "hyperglycaemic ep bd", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -127,6 +134,8 @@ def bd_lower_limb_ep(patient, environment, patient_time):
         "name": "lower limb ep bd", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -162,6 +171,8 @@ def enhanced_indep(patient, environment, patient_time):
         "name": "enhanced independence", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -197,6 +208,8 @@ def retinal_procedure(patient, environment, patient_time):
         "name": "retinal procedure", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -232,6 +245,8 @@ def amputation(patient, environment, patient_time):
         "name": "amputation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 3053, # NEL long stay
+        "glucose": -1,
+        "carbon": 5032, 
     }
 
     new_patient_record_entries = [encounter, entry]
