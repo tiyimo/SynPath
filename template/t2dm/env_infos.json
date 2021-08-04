@@ -8,6 +8,7 @@
             "gp0.medication_change1",
             "gp0.medication_change2",
             "gp0.insulin_prescription",
+            "gp0.highrisk_management",
             "gp0.exercise_prescription",
             "gp0.prediabetes_diagnosis",
             "gp0.t2dm_diagnosis",
@@ -28,6 +29,7 @@
             "gp1.medication_change1",
             "gp1.medication_change2",
             "gp1.insulin_prescription",
+            "gp1.highrisk_management",
             "gp1.exercise_prescription",
             "gp1.prediabetes_diagnosis",
             "gp1.t2dm_diagnosis",
@@ -48,6 +50,7 @@
             "gp2.medication_change1",
             "gp2.medication_change2",
             "gp2.insulin_prescription",
+            "gp2.highrisk_management",
             "gp2.exercise_prescription",
             "gp2.prediabetes_diagnosis",
             "gp2.t2dm_diagnosis",
@@ -68,6 +71,7 @@
             "gp3.medication_change1",
             "gp3.medication_change2",
             "gp3.insulin_prescription",
+            "gp3.highrisk_management",
             "gp3.exercise_prescription",
             "gp3.prediabetes_diagnosis",
             "gp3.t2dm_diagnosis",
@@ -88,6 +92,7 @@
             "gp4.medication_change1",
             "gp4.medication_change2",
             "gp4.insulin_prescription",
+            "gp4.highrisk_management",
             "gp4.exercise_prescription",
             "gp4.prediabetes_diagnosis",
             "gp4.t2dm_diagnosis",
@@ -233,6 +238,24 @@
     },
     {
         "environment_id": 21,
+        "name": "community footcare 1",
+        "interactions": [
+            "c_footcare0.prevent_foot_community",
+            "c_footcare0.manage_foot_community"
+        ],
+        "type": "community"
+    },
+    {
+        "environment_id": 22,
+        "name": "community footcare 2",
+        "interactions": [
+            "c_footcare1.prevent_foot_community",
+            "c_footcare1.manage_foot_community"
+        ],
+        "type": "community"
+    },
+    {
+        "environment_id": 23,
         "name": "diabetes eye care 1",
         "interactions": [
             "eye_care0.retinopathy_screening",
@@ -241,7 +264,7 @@
         "type": "community"
     },
     {
-        "environment_id": 22,
+        "environment_id": 24,
         "name": "diabetes eye care 2",
         "interactions": [
             "eye_care1.retinopathy_screening",
@@ -250,7 +273,7 @@
         "type": "community"
     },
     {
-        "environment_id": 23,
+        "environment_id": 25,
         "name": "a_and_e 1",
         "interactions": [
             "ae0.initial_diagnosis",
@@ -259,7 +282,7 @@
         "type": "a_and_e"
     },
     {
-        "environment_id": 24,
+        "environment_id": 26,
         "name": "a_and_e 2",
         "interactions": [
             "ae1.initial_diagnosis",
@@ -268,7 +291,7 @@
         "type": "a_and_e"
     },
     {
-        "environment_id": 25,
+        "environment_id": 27,
         "name": "diabetes_inpatient 1",
         "interactions": [
             "inpatient0.review_and_consultation",
@@ -282,7 +305,7 @@
         "type": "inpatient"
     },
     {
-        "environment_id": 26,
+        "environment_id": 28,
         "name": "diabetes_inpatient 2",
         "interactions": [
             "inpatient1.review_and_consultation",
@@ -296,7 +319,7 @@
         "type": "inpatient" 
     },
     {
-        "environment_id": 27,
+        "environment_id": 29,
         "name": "outpatient_diabetes 1",
         "interactions": [
             "outpatient0.outp_consultation_t2"
@@ -304,7 +327,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 28,
+        "environment_id": 30,
         "name": "outpatient_diabetes 2",
         "interactions": [
             "outpatient1.outp_consultation_t2"
@@ -312,7 +335,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 29,
+        "environment_id": 31,
         "name": "outpatient_urology 1",
         "interactions": [
             "outpatient0.outp_consultation_ed"
@@ -320,7 +343,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 30,
+        "environment_id": 32,
         "name": "outpatient_urology 2",
         "interactions": [
             "outpatient1.outp_consultation_ed"
@@ -328,7 +351,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 31,
+        "environment_id": 33,
         "name": "younger_adults_service 1",
         "interactions": [
             "outpatient0.intensive_glucose_control",
@@ -337,7 +360,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 32,
+        "environment_id": 34,
         "name": "younger_adults_service 2",
         "interactions": [
             "outpatient1.intensive_glucose_control",
@@ -346,7 +369,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 33,
+        "environment_id": 35,
         "name": "foot_clinic 1",
         "interactions": [
             "outpatient0.prevent_foot_outpatient",
@@ -355,7 +378,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 34,
+        "environment_id": 36,
         "name": "foot_clinic 2",
         "interactions": [
             "outpatient1.prevent_foot_outpatient",
@@ -364,7 +387,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 35,
+        "environment_id": 37,
         "name": "dietician 1",
         "interactions": [
             "outpatient0.nutrition_advice"
@@ -372,7 +395,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 36,
+        "environment_id": 38,
         "name": "dietician 2",
         "interactions": [
             "outpatient1.nutrition_advice"
@@ -380,7 +403,7 @@
         "type": "outpatient"
     },
     {
-        "environment_id": 37,
+        "environment_id": 39,
         "name": "kidney_specialist 1",
         "interactions": [
             "outpatient0.kidney_specialist"
@@ -388,7 +411,7 @@
         "type": "outpatient" 
     },
     {
-        "environment_id": 38,
+        "environment_id": 40,
         "name": "kidney_specialist 2",
         "interactions": [
             "outpatient1.kidney_specialist"
@@ -396,7 +419,7 @@
         "type": "outpatient" 
     },
     {
-        "environment_id": 39,
+        "environment_id": 41,
         "name": "liver_specialist 1",
         "interactions": [
             "outpatient0.liver_specialist"
@@ -404,7 +427,7 @@
         "type": "outpatient" 
     },
     {
-        "environment_id": 40,
+        "environment_id": 42,
         "name": "liver_specialist 2",
         "interactions": [
             "outpatient1.liver_specialist"

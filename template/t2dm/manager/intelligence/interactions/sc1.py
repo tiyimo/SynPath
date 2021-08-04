@@ -1,4 +1,4 @@
-# Diabetes interaction 22: Smoking cessation
+# Smoking service interaction 1: Smoking cessation
 # For people who smoke (Y), 20% chance of successfully stopping smoking if they go to the service
 # Don't need an if statement as they should only be referred here if they smoke
 

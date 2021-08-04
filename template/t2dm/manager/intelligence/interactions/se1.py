@@ -5,7 +5,7 @@ import datetime
 # "ddpp",
 # "online_lifestyle"
 
-# Diabetes interaction 13: Face to face group education
+# Structured education interaction 1: Face to face group education
 
 def f2f_group_education(patient, environment, patient_time):
     encounter = {
@@ -18,16 +18,16 @@ def f2f_group_education(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "f2f group education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 203, 
+        "cost": 203, # DESMOND RCT
     }
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.8, 28: 0.2} 
+    next_environment_id_to_prob = {2: 0.8, 30: 0.2} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20),
+        30: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -39,7 +39,7 @@ def f2f_group_education(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 14: DDPP
+# Structured education interaction 2: DDPP
 
 def ddpp(patient, environment, patient_time):
     encounter = {
@@ -57,11 +57,11 @@ def ddpp(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.8, 28: 0.2} 
+    next_environment_id_to_prob = {2: 0.8, 30: 0.2} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20),
+        30: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -73,7 +73,7 @@ def ddpp(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 14: Online lifestyle education 
+# Structured education interaction 3: Online lifestyle education 
 def online_lifestyle(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
@@ -90,11 +90,11 @@ def online_lifestyle(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.5, 28: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 30: 0.5} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20),
+        30: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

@@ -1,4 +1,3 @@
-from SynPath.src.patient_abm.agent.environment import COEnvironmentAgent, IPEnvironmentAgent, OPEnvironmentAgent
 import copy
 from pathlib import Path
 from typing import Callable, Dict, List, Optional, Tuple, Union
@@ -11,6 +10,9 @@ from patient_abm.agent.environment import (
     AandEEnvironmentAgent,
     EnvironmentAgent,
     GPEnvironmentAgent,
+    COEnvironmentAgent, 
+    OPEnvironmentAgent, 
+    IPEnvironmentAgent,
 )
 from patient_abm.agent.patient import PatientAgent
 from patient_abm.data_handler.base import DataHandler

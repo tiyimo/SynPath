@@ -4,7 +4,7 @@ import datetime
 # "specialist_ant_advice",
 # "pregnancy_advice"
 
-# Diabetes interaction 20: Specialist antenatal advice
+# Maternity interaction 1: Specialist antenatal advice
 # Appointments for advice within a specialist antenatal service
 
 def specialist_ant_advice(patient, environment, patient_time):
@@ -39,7 +39,7 @@ def specialist_ant_advice(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 21: Maternity care
+# Maternity interaction 2: Maternity care
 # Appointments for maternity care
 
 def maternity_care(patient, environment, patient_time):

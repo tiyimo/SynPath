@@ -4,7 +4,7 @@ import datetime
 # "initial diagnosis",
 # "acute_event_treatment"
 
-# Diabetes interaction 26: A&E diagnosis 
+# A&E interaction 1: A&E diagnosis 
 
 def initial_diagnosis(patient, environment, patient_time):
     encounter = {
@@ -22,11 +22,11 @@ def initial_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.5, 26: 0.5} 
+    next_environment_id_to_prob = {2: 0.5, 28: 0.5} # gp, inpatient
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        26: datetime.timedelta(days=20),
+        28: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -38,7 +38,7 @@ def initial_diagnosis(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 27: A&E treatment 
+# A&E interaction 2: A&E treatment 
 
 def acute_event_treatment(patient, environment, patient_time):
     encounter = {
@@ -56,11 +56,11 @@ def acute_event_treatment(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {2: 0.2, 26: 0.8} 
+    next_environment_id_to_prob = {2: 0.2, 28: 0.8} # gp, inpatient
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        26: datetime.timedelta(days=20),
+        28: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

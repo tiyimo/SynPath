@@ -1,11 +1,11 @@
 import datetime
 
-
 # All the interactions at the gp
 # "measure_hba1c",
 # "medication_change1",
 # "medication_change2",
 # "insulin_prescription",
+# "highrisk_management",
 # "exercise_prescription",
 # "prediabetes_diagnosis",
 # "t2dm_diagnosis",
@@ -15,7 +15,7 @@ import datetime
 # "complications_id_mant",
 # "glucose_clinic",
 
-# This is gp 4 (the second gp clinic, where patients are referred to community and hospital 2)
+# This is gp 3 (the fourth gp clinic, where patients are referred to community and hospital 2)
 
 # Diabetes interaction 1: blood test, measure hba1c
 
@@ -40,12 +40,12 @@ def measure_hba1c(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.5, 10: 0.3, 24: 0.2} 
+    next_environment_id_to_prob = {3: 0.5, 10: 0.3, 26: 0.2} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
         10: datetime.timedelta(days=20),
-        24: datetime.timedelta(days=1),
+        26: datetime.timedelta(days=1),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -91,7 +91,7 @@ def medication_metformin(patient, environment, patient_time):
         next_environment_id_to_time,
     )   
 
-# Diabetes interaction 2: medication change 1 
+# Diabetes interaction 3: medication change 1 
 # If hba1c hasn't changed in 6 months, can't happen on the first appointment
 
 def medication_change1(patient, environment, patient_time):
@@ -115,12 +115,12 @@ def medication_change1(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.5, 8: 0.3, 28: 0.2} 
+    next_environment_id_to_prob = {3: 0.5, 8: 0.3, 30: 0.2} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
-        28: datetime.timedelta(days=1),
+        30: datetime.timedelta(days=1),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -132,7 +132,7 @@ def medication_change1(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 3: medication change 2
+# Diabetes interaction 4: medication change 2
 # If hba1c hasn't changed in 6 months and interaction 2 has occurred, can't happen on the first appointment
 
 def medication_change2(patient, environment, patient_time):
@@ -156,12 +156,12 @@ def medication_change2(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.5, 8: 0.3, 28: 0.2} 
+    next_environment_id_to_prob = {3: 0.5, 8: 0.3, 30: 0.2} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
-        28: datetime.timedelta(days=1),
+        30: datetime.timedelta(days=1),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -173,7 +173,7 @@ def medication_change2(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 4: insulin
+# Diabetes interaction 5: insulin
 def insulin_prescription(patient, environment, patient_time):
     encounter = {
         "resource_type": "Encounter",
@@ -190,12 +190,12 @@ def insulin_prescription(patient, environment, patient_time):
 
     new_patient_record_entries = [entry]
 
-    next_environment_id_to_prob = {3: 0.5, 8: 0.3, 28: 0.2} 
+    next_environment_id_to_prob = {3: 0.5, 8: 0.3, 30: 0.2} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         8: datetime.timedelta(days=20),
-        28: datetime.timedelta(days=20)
+        30: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -207,7 +207,40 @@ def insulin_prescription(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 4: exercise prescription
+# Diabetes interaction 6: high risk (of type 2) management
+def highrisk_management(patient, environment, patient_time):
+    encounter = {
+        "resource_type": "Encounter",
+        "name" : "high risk management",
+        "start": patient_time,
+    }
+
+    entry = { # not the hba1c in this one
+        "resource_type" : "ServiceRequest",
+        "name": "high risk management", 
+        "start": encounter["start"] + datetime.timedelta(minutes=10),
+        "cost": 72.33, # regular cost of GP appointment 
+    }
+
+    new_patient_record_entries = [entry]
+
+    next_environment_id_to_prob = {3: 0.5, 10: 0.5} 
+
+    next_environment_id_to_time = {
+        3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        10: datetime.timedelta(days=20),
+    }
+
+    update_data = {"new_patient_record_entries": new_patient_record_entries}
+    return (
+        patient,
+        environment,
+        update_data,
+        next_environment_id_to_prob,
+        next_environment_id_to_time,
+    )
+
+# Diabetes interaction 7: exercise prescription
 
 def exercise_prescription(patient, environment, patient_time):
     encounter = {
@@ -240,7 +273,7 @@ def exercise_prescription(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 6: prediabetes diagnosis
+# Diabetes interaction 8: prediabetes diagnosis
 # Call if hba1c is between 42 and 48 mmol/mol
 
 def prediabetes_diagnosis(patient, environment, patient_time):
@@ -281,7 +314,7 @@ def prediabetes_diagnosis(patient, environment, patient_time):
     )
 
 
-# Diabetes interaction 7: type 2 diabetes diagnosis
+# Diabetes interaction 9: type 2 diabetes diagnosis
 # Call if hba1c is over 48 mmol/mol
 
 def t2dm_diagnosis(patient, environment, patient_time):
@@ -305,11 +338,12 @@ def t2dm_diagnosis(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, condition, entry]
 
-    next_environment_id_to_prob = {3: 0.8, 6: 0.2} 
+    next_environment_id_to_prob = {3: 0.88, 6: 0.06, 8: 0.06} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        6: datetime.timedelta(days=20)
+        6: datetime.timedelta(days=20),
+        8: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -322,7 +356,7 @@ def t2dm_diagnosis(patient, environment, patient_time):
     )
 
 
-# Diabetes interaction 8: glucose management
+# Diabetes interaction 10: glucose management
 # Ongoing management of glucose by a GP 
 
 def glucose_management(patient, environment, patient_time):
@@ -340,12 +374,12 @@ def glucose_management(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.5, 28: 0.3, 30: 0.2} 
+    next_environment_id_to_prob = {3: 0.5, 30: 0.3, 32: 0.2} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20),
-        30: datetime.timedelta(days=20)
+        30: datetime.timedelta(days=20),
+        32: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -357,7 +391,7 @@ def glucose_management(patient, environment, patient_time):
         next_environment_id_to_time,
     )
     
-# Diabetes interaction 9: annual health check
+# Diabetes interaction 11: annual health check
 # Has to be able to trigger foot care etc as well.  
 
 def annual_health_check(patient, environment, patient_time):
@@ -375,13 +409,13 @@ def annual_health_check(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.5, 20: 0.3, 22: 0.1, 34: 0.1} 
+    next_environment_id_to_prob = {3: 0.5, 20: 0.3, 24: 0.1, 36: 0.1} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         20: datetime.timedelta(days=20),
-        22: datetime.timedelta(days=20),
-        34: datetime.timedelta(days=20)
+        24: datetime.timedelta(days=20),
+        36: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -393,7 +427,7 @@ def annual_health_check(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 10: hypertension management
+# Diabetes interaction 12: hypertension management
 # measure blood pressure 
 
 def hypertension_management(patient, environment, patient_time):
@@ -411,11 +445,11 @@ def hypertension_management(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.5, 28: 0.5} 
+    next_environment_id_to_prob = {3: 0.5, 30: 0.5} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20)
+        30: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -427,7 +461,7 @@ def hypertension_management(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 11: complications identification and management 
+# Diabetes interaction 13: complications identification and management 
 # sending patients to foot care, mental health, maternity etc.
 
 def complications_id_mant(patient, environment, patient_time):
@@ -445,10 +479,10 @@ def complications_id_mant(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {34: 0.5, 14: 0.3, 18: 0.2} 
+    next_environment_id_to_prob = {36: 0.5, 14: 0.3, 18: 0.2} 
 
     next_environment_id_to_time = {
-        34: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
+        36: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
         14: datetime.timedelta(days=20),
         18: datetime.timedelta(days=1),
     }
@@ -462,7 +496,7 @@ def complications_id_mant(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 12: glucose clinic 
+# Diabetes interaction 14: glucose clinic 
 # primary care glucose clinic rather than GP managing glucose in 8.
 
 def glucose_clinic(patient, environment, patient_time):
@@ -480,11 +514,11 @@ def glucose_clinic(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {3: 0.9, 28: 0.1} 
+    next_environment_id_to_prob = {3: 0.9, 30: 0.1} 
 
     next_environment_id_to_time = {
         3: datetime.timedelta(days=30),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20)
+        30: datetime.timedelta(days=20)
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

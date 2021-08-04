@@ -8,7 +8,6 @@ from patient_abm.agent.base import Agent
 from patient_abm.agent.patient import PatientAgent
 from patient_abm.data_handler.fhir import FHIRHandler
 
-
 class EnvironmentAgent(Agent):
     """Class for environment agent"""
 
@@ -425,6 +424,7 @@ class GPEnvironmentAgent(EnvironmentAgent):
             created_at=created_at,
             **kwargs,
         )
+        
 class COEnvironmentAgent(EnvironmentAgent):
     """
     Class for community environment agent.
@@ -513,8 +513,6 @@ class COEnvironmentAgent(EnvironmentAgent):
             created_at=created_at,
             **kwargs,
         )
-
-
 
 class OPEnvironmentAgent(EnvironmentAgent):
     """

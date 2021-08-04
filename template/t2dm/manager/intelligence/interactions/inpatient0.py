@@ -9,7 +9,7 @@ import datetime
 # "retinal_procedure",
 # "amputation"
 
-# Diabetes interaction 28: Inpatient review and consultation (might take out if not in spell) 
+# Inpatient interaction 1: Inpatient review and consultation (might take out if not in spell) 
 
 def review_and_consultation(patient, environment, patient_time):
     encounter = {
@@ -26,12 +26,12 @@ def review_and_consultation(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        27: datetime.timedelta(days=20),
-        37: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -43,7 +43,7 @@ def review_and_consultation(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 29: Hypoglycaemic episode bed day
+# Inpatient interaction 2: Hypoglycaemic episode bed day
 
 def bd_hypoglycaemic_ep(patient, environment, patient_time):
     encounter = {
@@ -61,12 +61,12 @@ def bd_hypoglycaemic_ep(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        27: datetime.timedelta(days=20),
-        37: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -78,7 +78,7 @@ def bd_hypoglycaemic_ep(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 30: Hyperglycaemic episode bed day
+# Inpatient interaction 3: Hyperglycaemic episode bed day
 
 def bd_hyperglycaemic_ep(patient, environment, patient_time):
     encounter = {
@@ -96,12 +96,12 @@ def bd_hyperglycaemic_ep(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        27: datetime.timedelta(days=20),
-        37: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -113,7 +113,7 @@ def bd_hyperglycaemic_ep(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 31: Lower limb complications bed day
+# Inpatient interaction 4: Lower limb complications bed day
 
 def bd_lower_limb_ep(patient, environment, patient_time):
     encounter = {
@@ -131,12 +131,12 @@ def bd_lower_limb_ep(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20),
-        38: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -148,7 +148,7 @@ def bd_lower_limb_ep(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 32: Enhanced independence
+# Inpatient interaction 5: Enhanced independence
 
 def enhanced_indep(patient, environment, patient_time):
     encounter = {
@@ -166,12 +166,12 @@ def enhanced_indep(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         2: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        28: datetime.timedelta(days=20),
-        38: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -183,7 +183,7 @@ def enhanced_indep(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 33: Retinal procedure
+# Inpatient interaction 6: Retinal procedure
 
 def retinal_procedure(patient, environment, patient_time):
     encounter = {
@@ -201,12 +201,12 @@ def retinal_procedure(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        27: datetime.timedelta(days=20),
-        37: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}
@@ -218,7 +218,7 @@ def retinal_procedure(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 34: Amputation
+# Inpatient interaction 7: Amputation
 
 def amputation(patient, environment, patient_time):
     encounter = {
@@ -236,12 +236,12 @@ def amputation(patient, environment, patient_time):
 
     new_patient_record_entries = [encounter, entry]
 
-    next_environment_id_to_prob = {0: 0.5, 27: 0.3, 37: 0.1} 
+    next_environment_id_to_prob = {0: 0.5, 29: 0.3, 39: 0.1} 
 
     next_environment_id_to_time = {
         0: datetime.timedelta(days=10),  # TODO: from initial patient_time (not last)
-        27: datetime.timedelta(days=20),
-        37: datetime.timedelta(days=20),
+        29: datetime.timedelta(days=20),
+        39: datetime.timedelta(days=20),
     }
 
     update_data = {"new_patient_record_entries": new_patient_record_entries}

@@ -1,6 +1,6 @@
 import datetime
 
-# Diabetes interaction 17: Psychological assessment
+# Mental health interaction 1: Psychological assessment
 
 def psychol_assessment(patient, environment, patient_time):
     encounter = {
@@ -34,7 +34,7 @@ def psychol_assessment(patient, environment, patient_time):
         next_environment_id_to_time,
     )
 
-# Diabetes interaction 18: IAPT
+# Mental health interaction 2: IAPT
 
 def iapt(patient, environment, patient_time):
     encounter = {
@@ -69,7 +69,7 @@ def iapt(patient, environment, patient_time):
     )
 
 
-# Diabetes interaction 19: Community mental health for severe mental illness
+# Mental health interaction 3: Community mental health for severe mental illness
 
 def cmh_for_smi(patient, environment, patient_time):
     encounter = {

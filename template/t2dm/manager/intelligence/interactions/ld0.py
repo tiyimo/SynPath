@@ -4,7 +4,7 @@ import datetime
 # Interaction for patient with learning disabilities
 # "adj_to_care"
 
-# Diabetes interaction 16: Adjustments to care
+# Learning disability interaction 1: Adjustments to care
 # This can mean adjusting lifestyle education so that it meets the needs of people with learning disabilities
 
 def adj_to_care(patient, environment, patient_time):
