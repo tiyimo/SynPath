@@ -4,7 +4,8 @@ import datetime
 # "initial diagnosis",
 # "acute_event_treatment"
 
-# A&E interaction 1: A&E diagnosis 
+# A&E interaction 1: A&E diagnosis
+# First encounter when someone enters the A&E department and is assessed. 
 
 def initial_diagnosis(patient, environment, patient_time):
     encounter = {
@@ -17,9 +18,9 @@ def initial_diagnosis(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "initial diagnosis", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 166, # NHS reference costs
-        "glucose": -1,
-        "carbon": 300, # update for more accurate figure
+        "cost": 166,    # NHS reference costs
+        "glucose": -1,  # dummy glucose impact, to be updated
+        "carbon": 300,  # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -41,6 +42,7 @@ def initial_diagnosis(patient, environment, patient_time):
     )
 
 # A&E interaction 2: A&E treatment 
+# Treatment provided within the A&E
 
 def acute_event_treatment(patient, environment, patient_time):
     encounter = {
@@ -53,9 +55,9 @@ def acute_event_treatment(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "acute event treatment", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 166, # NHS reference costs
-        "glucose": -1,
-        "carbon": 300, # update for more accurate figure
+        "cost": 166,    # NHS reference costs
+        "glucose": -1,  # dummy glucose impact, to be updated
+        "carbon": 300,  # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]

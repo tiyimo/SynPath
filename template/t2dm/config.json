@@ -1,12 +1,10 @@
-import numpy as np
-
 {
     "patients": "template/t2dm/patient_infos.json",
     "environments": "template/t2dm/env_infos.json",
     "intelligence_dir": "template/t2dm/manager/intelligence",
     "save_dir": "template/t2dm/manager/intelligence/save_dir",
     "initial_environment_ids": {
-        "from_id": np.repeat([0,1,2,3,4], 2000) 
+        "from_id": 0
     },
     "stopping_condition": {
         "max_patient_time": {"days": 30}

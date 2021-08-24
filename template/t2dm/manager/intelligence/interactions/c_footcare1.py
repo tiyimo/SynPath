@@ -5,7 +5,7 @@ import datetime
 # "manage_foot_community",
 
 # Community footcare 1: Preventing foot problems in the community
-# Caring for feet with chiropody etc with footcare in the community
+# Caring for feet with chiropody etc with footcare in the community (prevention)
 
 def prevent_foot_community(patient, environment, patient_time):
     encounter = {
@@ -18,9 +18,9 @@ def prevent_foot_community(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare prevention in community", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 43, # NHS Ref costs
-        "glucose": -1,
-        "carbon": 25, # update for more accurate figure
+        "cost": 43,     # NHS Ref costs
+        "glucose": -1,  # dummy glucose impact, to be updated
+        "carbon": 25,   # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -44,7 +44,7 @@ def prevent_foot_community(patient, environment, patient_time):
 
 
 # Community footcare 2: Managing foot problems in the community
-# Caring for feet problems such as foot ulcers with footcare in the community
+# Caring for feet problems such as foot ulcers with footcare in the community (management)
 
 def manage_foot_community(patient, environment, patient_time):
     encounter = {
@@ -57,9 +57,9 @@ def manage_foot_community(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare management in community", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 54, # NHS Ref costs
-        "glucose": -1,
-        "carbon": 25, # update for more accurate figure
+        "cost": 54,     # NHS Ref costs
+        "glucose": -1,  # dummy glucose impact, to be updated
+        "carbon": 25,   # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]

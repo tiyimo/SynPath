@@ -1,4 +1,4 @@
-# Interactions for outpatient care
+import datetime
 
 # "outp_consultation_t2"
 # "outp_consultation_ed"
@@ -9,8 +9,6 @@
 # "manage_foot"
 # "nutrition_advice"
 # "exit_model" (kidney/ liver)
-
-import datetime
 
 # Outpatient interaction 1: Outpatient consultation in a diabetes service
 
@@ -25,9 +23,9 @@ def outp_consultation_t2(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "diabetes service consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 145,
-        "glucose": -1,
-        "carbon": 22,  
+        "cost": 145,            # NHS Ref costs 2019, outpatient diabetes care 
+        "glucose": -1,          # dummy glucose impact, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -61,9 +59,9 @@ def outp_consultation_ed(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "diabetes-related urology consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 105, 
-        "glucose": 0,
-        "carbon": 22, 
+        "cost": 105,            # NHS Ref costs 2019, outpatient urology 
+        "glucose": 0,           # dummy glucose impact, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -97,9 +95,9 @@ def laser_treatment(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "laser treatment", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 1081, 
-        "glucose": -1,
-        "carbon": 300, 
+        "cost": 1081,           # NHS Ref costs 2019, major retinal procedure
+        "glucose": -1,          # dummy glucose impact, to be updated
+        "carbon": 300,          # carbon impact to be updated
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -133,9 +131,9 @@ def intensive_glucose_control(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "intensive glucose control", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 145,
-        "glucose": -1,
-        "carbon": 22, 
+        "cost": 145,            # NHS Ref costs 2019, outpatient diabetes care 
+        "glucose": -1,          # dummy glucose impacts, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -169,9 +167,9 @@ def cvd_risk_reduction(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "cvd risk reduction", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 138, 
-        "glucose": 0,
-        "carbon": 22, 
+        "cost": 138,            # NHS Ref costs 2019 for ECG monitoring
+        "glucose": 0,           # dummy glucose impact, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -206,9 +204,9 @@ def prevent_foot_outpatient(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare prevention in outpatient", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 43,
-        "glucose": 0,
-        "carbon": 22,  
+        "cost": 43,             # NHS Ref costs 2019
+        "glucose": 0,           # dummy glucose impact, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -244,9 +242,9 @@ def manage_foot_outpatient(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "footcare management in outpatient", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 54,
-        "glucose": 0,
-        "carbon": 22,  
+        "cost": 54,             # NHS Ref costs 2019
+        "glucose": 0,           # dummy glucose impact, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     }
 
     new_patient_record_entries = [encounter, entry]

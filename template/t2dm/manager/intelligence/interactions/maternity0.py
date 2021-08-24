@@ -1,4 +1,4 @@
-import datetime
+import datetime     # enables the start time elements in date and time format
 
 # Interactions for diabetes maternity related services
 # "specialist_ant_advice",
@@ -18,9 +18,9 @@ def specialist_ant_advice(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "specialist antenatal advice", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 112,
-        "glucose": 0,
-        "carbon": 50,  # update for accurate carbon  
+        "cost": 112,            # NHS Ref costs 2019, obstetrics care
+        "glucose": 0,           # dummy glucose impact, to be updated
+        "carbon": 50,           # update for accurate carbon  
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -42,7 +42,7 @@ def specialist_ant_advice(patient, environment, patient_time):
     )
 
 # Maternity interaction 2: Maternity care
-# Appointments for maternity care
+# Appointments for maternity care (community midwife)
 
 def maternity_care(patient, environment, patient_time):
     encounter = {
@@ -55,9 +55,9 @@ def maternity_care(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "maternity care", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 58,
-        "glucose": 0,
-        "carbon": 50,  # update for accurate carbon  
+        "cost": 58,             # NHS Ref costs 2019, community midwife visit
+        "glucose": 0,           # dummy glucose impact, to be updated
+        "carbon": 50,           # update for accurate carbon  
     }
 
     new_patient_record_entries = [encounter, entry]

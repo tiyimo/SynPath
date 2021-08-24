@@ -15,9 +15,9 @@ def smoking_cessation(patient, patient_time):
         "resource_type": "Condition",
         "name": "stop_smoking",
         "start": patient_time,
-        "cost": 143, # if male, 138 if female
-        "glucose": -1,
-        "carbon": 22, 
+        "cost": 140,            # PSSRU Unit cost 2018-19 for male patients (female patients £135)
+        "glucose": -1,          # dummy glucose impact, to be updated
+        "carbon": 22,           # PSSRU 2018-19 value for outpatient visit carbon impact
     } 
 
    new_patient_record_entries = [encounter, entry]

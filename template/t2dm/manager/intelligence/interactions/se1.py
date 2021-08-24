@@ -18,7 +18,9 @@ def f2f_group_education(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "f2f group education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 203, # DESMOND RCT
+        "cost": 203,                # Intervention cost from the DESMOND RCT, to be updated to a more recent figure
+        "glucose": -1,              # dummy glucose impact, to be updated
+        "carbon": 100,              # dummy carbon impact, to be updated
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -52,9 +54,9 @@ def ddpp(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "ddpp_course", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 150, # update
-        "glucose": -1,
-        "carbon": 100, # update 
+        "cost": 150,                # Not aware of economic evaluation of DDP so far, to be updated
+        "glucose": -1,              # dummy glucose value, to be updated
+        "carbon": 100,              # dummy carbon impact, to be updated
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -87,9 +89,9 @@ def online_lifestyle(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "online lifestyle education", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 268, # Liva, Nuffield Trust
-        "glucose": -1,
-        "carbon": 100, # update 
+        "cost": 268,                # Intervention cost in NHS pilot for Liva app, Nuffield Trust
+        "glucose": -1,              # dummy glucose impact, to be update
+        "carbon": 100,              # dummy carbon impact, to be updated
     }
 
     new_patient_record_entries = [encounter, entry]

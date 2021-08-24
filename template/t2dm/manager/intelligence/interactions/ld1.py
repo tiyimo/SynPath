@@ -4,7 +4,7 @@ import datetime
 # "adj_to_care"
 
 # Learning disability interaction 1: Adjustments to care
-# This can mean adjusting lifestyle education so that it meets the needs of people with learning disabilities
+# This can mean (for example) adjusting lifestyle education so that it meets the needs of people with learning disabilities
 
 def adj_to_care(patient, environment, patient_time):
     encounter = {
@@ -17,9 +17,9 @@ def adj_to_care(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "ld_service", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 200, # update for accurate cost
-        "glucose": 0,
-        "carbon": 50,  # update for accurate carbon
+        "cost": 200,            # update for accurate cost
+        "glucose": 0,           # glucose impact, to be updated
+        "carbon": 50,           # update for accurate carbon
     }
 
     new_patient_record_entries = [encounter, entry]

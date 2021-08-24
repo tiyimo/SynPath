@@ -259,7 +259,7 @@
         "name": "diabetes eye care 1",
         "interactions": [
             "eye_care0.retinopathy_screening",
-            "eye_care0.afilbercept_prescription"
+            "eye_care0.aflibercept_prescription"
         ],
         "type": "community"
     },
@@ -268,7 +268,7 @@
         "name": "diabetes eye care 2",
         "interactions": [
             "eye_care1.retinopathy_screening",
-            "eye_care1.afilbercept_prescription"
+            "eye_care1.aflibercept_prescription"
         ],
         "type": "community"
     },

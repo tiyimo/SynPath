@@ -1,4 +1,4 @@
-import datetime
+import datetime     # enables the start time elements in date and time format
 
 # Interactions for inpatient care
 # "review_and_consultation",
@@ -9,7 +9,7 @@ import datetime
 # "retinal_procedure",
 # "amputation"
 
-# Inpatient interaction 1: Inpatient review and consultation (might take out if not in spell) 
+# Inpatient interaction 1: Inpatient review and consultation 
 
 def review_and_consultation(patient, environment, patient_time):
     encounter = {
@@ -22,9 +22,9 @@ def review_and_consultation(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "review and consultation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,       # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,      # dummy glucose impact, to be updated
+        "carbon": 5032,     # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -59,9 +59,9 @@ def bd_hypoglycaemic_ep(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "hypoglycaemic ep bd", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,       # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,      # dummy glucose impact, to be updated
+        "carbon": 5032,     # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -96,9 +96,9 @@ def bd_hyperglycaemic_ep(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "hyperglycaemic ep bd", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,       # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,      # dummy glucose impact, to be updated
+        "carbon": 5032,     # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -133,9 +133,9 @@ def bd_lower_limb_ep(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "lower limb ep bd", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,       # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,      # dummy glucose impact, to be updated
+        "carbon": 5032,     # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -170,9 +170,9 @@ def enhanced_indep(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "enhanced independence", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,           # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,          # dummy glucose impact, to be updated
+        "carbon": 5032,         # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -207,9 +207,9 @@ def retinal_procedure(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "retinal procedure", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,           # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,          # dummy glucose impact, to be updated
+        "carbon": 5032,         # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -244,9 +244,9 @@ def amputation(patient, environment, patient_time):
         "resource_type" : "Observation",
         "name": "amputation", 
         "start": encounter["start"] + datetime.timedelta(minutes=15),
-        "cost": 3053, # NEL long stay
-        "glucose": -1,
-        "carbon": 5032, 
+        "cost": 3053,           # NEL long stay from PSSRU 2018-19 - to be updated
+        "glucose": -1,          # dummy glucose impact, to be updated
+        "carbon": 5032,         # carbon impact, PSSRU 2018-19
     }
 
     new_patient_record_entries = [encounter, entry]
