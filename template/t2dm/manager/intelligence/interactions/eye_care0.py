@@ -19,7 +19,7 @@ def retinopathy_screening(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 74,     # NHS Ref costs
         "glucose": 0,   # dummy glucose impact, to be updated
-        "carbon": 25,   # update for more accurate figure
+        "carbon": 22,   # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]
@@ -41,7 +41,7 @@ def retinopathy_screening(patient, environment, patient_time):
     )
 
 
-# Eye care 2: Aflibercept prescription for AMD (high cost drug)
+# Eye care 2: Afilbercept prescription for AMD (high cost drug)
 # Drug used to treat wet age-related macular degeneration
 def aflibercept_prescription(patient, environment, patient_time):
     encounter = {
@@ -56,7 +56,7 @@ def aflibercept_prescription(patient, environment, patient_time):
         "start": encounter["start"] + datetime.timedelta(minutes=15),
         "cost": 809,    # NHS Ref costs
         "glucose": 0,   # dummy glucose impact, to be updated
-        "carbon": 25,   # update for more accurate figure
+        "carbon": 22,   # update for more accurate figure
     }
 
     new_patient_record_entries = [encounter, entry]

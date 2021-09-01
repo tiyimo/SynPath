@@ -19,19 +19,3 @@ Patients will exit the model if they develop end-stage kidney disease or liver d
 Dictionaries are used to input patients through patient_infos.json. Patient characteristics data were developed from PHE fingertips data (link)
 
 Future versions of the model could use existing data sets (e.g. CPRD) to create a more accurate representation of 10,000 patients.
-
-
-### Creating environments
-
-The diabetes pathway used in the model was developed from the NHS RightCare pathway and NICE guidelines. Dictionaries are used to input environments through env_infos.json.
-
-
-## Intelligence layer
-
-Special interactions where the learning takes place are:
-* "prediabetes_diagnosis"
-* "t2dm_diagnosis"
-
-Special interactions where the patient leaves the module are:
-* "kidney_specialist" 
-* "liver_specialist"
